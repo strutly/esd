@@ -1,0 +1,242 @@
+var that;
+const app = getApp();
+Page({
+  data: {
+    questions:[{
+      title:"肢体瘫痪",
+      show:true,
+      check:-1,
+      checks:[{
+        lable:"正常"
+      },{
+        lable:"不需要加强试验即可发现有僵直，但关节的活动范围不受限且可轻松达到。"
+      },{
+        lable:"不需要加强试验即可发现有僵直;需要用力才能使关节的活动范围不受限。"
+      },{
+        lable:"不需要加强试验即可发现有僵直，且关节的活动范围受限。"
+      }]
+    },{
+      title:"肢体痉挛",
+      show:false,
+      check:-1,
+      checks:[{
+        lable:"正常"
+      },{
+        lable:"不需要加强试验即可发现有僵直，但关节的活动范围不受限且可轻松达到。"
+      },{
+        lable:"不需要加强试验即可发现有僵直;需要用力才能使关节的活动范围不受限。"
+      },{
+        lable:"不需要加强试验即可发现有僵直，且关节的活动范围受限。"
+      }]
+    },{
+      title:"运动迟缓",
+      show:false,
+      check:-1,
+      checks:[{
+        lable:"正常"
+      },{
+        lable:"不需要加强试验即可发现有僵直，但关节的活动范围不受限且可轻松达到。"
+      },{
+        lable:"不需要加强试验即可发现有僵直;需要用力才能使关节的活动范围不受限。"
+      },{
+        lable:"不需要加强试验即可发现有僵直，且关节的活动范围受限。"
+      }]
+    },{
+      title:"运动迟缓",
+      show:false,
+      check:-1,
+      checks:[{
+        lable:"正常"
+      },{
+        lable:"不需要加强试验即可发现有僵直，但关节的活动范围不受限且可轻松达到。"
+      },{
+        lable:"不需要加强试验即可发现有僵直;需要用力才能使关节的活动范围不受限。"
+      },{
+        lable:"不需要加强试验即可发现有僵直，且关节的活动范围受限。"
+      }]
+    },{
+      title:"运动迟缓",
+      show:false,
+      check:-1,
+      checks:[{
+        lable:"正常"
+      },{
+        lable:"不需要加强试验即可发现有僵直，但关节的活动范围不受限且可轻松达到。"
+      },{
+        lable:"不需要加强试验即可发现有僵直;需要用力才能使关节的活动范围不受限。"
+      },{
+        lable:"不需要加强试验即可发现有僵直，且关节的活动范围受限。"
+      }]
+    },{
+      title:"运动迟缓",
+      show:false,
+      check:-1,
+      checks:[{
+        lable:"正常"
+      },{
+        lable:"不需要加强试验即可发现有僵直，但关节的活动范围不受限且可轻松达到。"
+      },{
+        lable:"不需要加强试验即可发现有僵直;需要用力才能使关节的活动范围不受限。"
+      },{
+        lable:"不需要加强试验即可发现有僵直，且关节的活动范围受限。"
+      }]
+    },{
+      title:"运动迟缓",
+      show:false,
+      check:-1,
+      checks:[{
+        lable:"正常"
+      },{
+        lable:"不需要加强试验即可发现有僵直，但关节的活动范围不受限且可轻松达到。"
+      },{
+        lable:"不需要加强试验即可发现有僵直;需要用力才能使关节的活动范围不受限。"
+      },{
+        lable:"不需要加强试验即可发现有僵直，且关节的活动范围受限。"
+      }]
+    },{
+      title:"运动迟缓",
+      show:false,
+      check:-1,
+      checks:[{
+        lable:"正常"
+      },{
+        lable:"不需要加强试验即可发现有僵直，但关节的活动范围不受限且可轻松达到。"
+      },{
+        lable:"不需要加强试验即可发现有僵直;需要用力才能使关节的活动范围不受限。"
+      },{
+        lable:"不需要加强试验即可发现有僵直，且关节的活动范围受限。"
+      }]
+    },{
+      title:"运动迟缓",
+      show:false,
+      check:-1,
+      checks:[{
+        lable:"正常"
+      },{
+        lable:"不需要加强试验即可发现有僵直，但关节的活动范围不受限且可轻松达到。"
+      },{
+        lable:"不需要加强试验即可发现有僵直;需要用力才能使关节的活动范围不受限。"
+      },{
+        lable:"不需要加强试验即可发现有僵直，且关节的活动范围受限。"
+      }]
+    },{
+      title:"运动迟缓",
+      show:false,
+      check:-1,
+
+      checks:[{
+        lable:"正常"
+      },{
+        lable:"不需要加强试验即可发现有僵直，但关节的活动范围不受限且可轻松达到。"
+      },{
+        lable:"不需要加强试验即可发现有僵直;需要用力才能使关节的活动范围不受限。"
+      },{
+        lable:"不需要加强试验即可发现有僵直，且关节的活动范围受限。"
+      }]
+    },{
+      title:"运动迟缓",
+      show:false,
+      check:-1,
+      checks:[{
+        lable:"正常"
+      },{
+        lable:"不需要加强试验即可发现有僵直，但关节的活动范围不受限且可轻松达到。"
+      },{
+        lable:"不需要加强试验即可发现有僵直;需要用力才能使关节的活动范围不受限。"
+      },{
+        lable:"不需要加强试验即可发现有僵直，且关节的活动范围受限。"
+      }]
+    },{
+      title:"运动迟缓",
+      show:false,
+      check:-1,
+      checks:[{
+        lable:"正常"
+      },{
+        lable:"不需要加强试验即可发现有僵直，但关节的活动范围不受限且可轻松达到。"
+      },{
+        lable:"不需要加强试验即可发现有僵直;需要用力才能使关节的活动范围不受限。"
+      },{
+        lable:"不需要加强试验即可发现有僵直，且关节的活动范围受限。"
+      }]
+    },{
+      title:"运动迟缓",
+      show:false,
+      check:-1,
+      checks:[{
+        lable:"正常"
+      },{
+        lable:"不需要加强试验即可发现有僵直，但关节的活动范围不受限且可轻松达到。"
+      },{
+        lable:"不需要加强试验即可发现有僵直;需要用力才能使关节的活动范围不受限。"
+      },{
+        lable:"不需要加强试验即可发现有僵直，且关节的活动范围受限。"
+      }]
+    },{
+      title:"运动迟缓",
+      show:false,
+      check:-1,
+      checks:[{
+        lable:"正常"
+      },{
+        lable:"不需要加强试验即可发现有僵直，但关节的活动范围不受限且可轻松达到。"
+      },{
+        lable:"不需要加强试验即可发现有僵直;需要用力才能使关节的活动范围不受限。"
+      },{
+        lable:"不需要加强试验即可发现有僵直，且关节的活动范围受限。"
+      }]
+    },{
+      title:"运动迟缓",
+      show:false,
+      check:-1,
+      checks:[{
+        lable:"正常"
+      },{
+        lable:"不需要加强试验即可发现有僵直，但关节的活动范围不受限且可轻松达到。"
+      },{
+        lable:"不需要加强试验即可发现有僵直;需要用力才能使关节的活动范围不受限。"
+      },{
+        lable:"不需要加强试验即可发现有僵直，且关节的活动范围受限。"
+      }]
+    }]     
+    
+  },
+
+  onLoad: function (options) {
+    that = this;
+  },
+  itemChange(e){
+    console.log(e);
+    let index = e.currentTarget.dataset.index;
+    let questions = that.data.questions;
+    questions.forEach((item,i)=>{
+      if(i==index){
+        item.show = !item.show;
+      }else{
+        item.show = false;
+      }
+    });
+    that.setData({questions:questions})
+  },
+  radioChange(e){
+    console.log(e);
+    let index = e.currentTarget.dataset.index;
+    let questions = that.data.questions;
+    let question = questions[index];
+
+    let val = e.detail.value;
+    
+    question.check = val;
+    
+    that.setData({
+      ['questions['+index+']']:question
+    })
+  },
+  submit(){
+    
+    
+    wx.reLaunch({
+      url: '/pages/disability/result',
+    })
+  }
+})

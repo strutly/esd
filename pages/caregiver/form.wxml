@@ -1,0 +1,131 @@
+<view class="prompt" wx:if="{{prompt}}">{{promptMsg}}</view>
+<view class="container">
+  <view class="head">
+    <view class="head-title">培训班名称:全国第一期健康照护师试点培训班</view>
+    <view class="head-title">系统课程名称:健康照护师五级培训班</view>
+    <view class="head-title">培训起止时间:2022-03-01~2022-06-01</view> 
+  </view>
+  <view class="form-cells">
+    <form bindsubmit="formCheck">
+      <input hidden name="gender" value="{{formData.gender}}"/>
+      <input hidden name="education" value="{{formData.education}}"/>
+      <input hidden name="expectAddress" value="{{formData.expectAddress}}"/>
+      <input hidden name="photo" value="{{formData.photo}}"/>
+      <input hidden name="agree" value="{{agree}}"/>
+      <view class="form-cell">
+        <lable>姓名</lable>
+        <input type="text" name="name" placeholder="请输入您的姓名" value="{{formData.name}}"/>
+      </view>
+      <view class="form-cell">
+        <lable>性别</lable>
+        <picker mode="selector" bindchange="pickerChange" range="{{sexArray}}" value="{{formData.gender}}" data-type="formData.gender">          
+          {{sexArray[formData.gender]}}
+        </picker>
+      </view>
+      <view class="form-cell">
+        <lable>身份证号码</lable>
+        <input type="idcard" name="idNum" placeholder="请输入您的身份证号码" value="{{formData.idNum}}"/>
+      </view>
+
+      <view class="form-cell">
+        <lable>学历</lable>
+        <picker mode="selector" bindchange="pickerChange" range="{{educationArray}}" value="{{formData.education}}" data-type="formData.education">          
+          {{educationArray[formData.education]}}
+        </picker>
+      </view>
+      <view class="form-cell">
+        <lable>联系电话</lable>
+        <input type="number" name="phone" placeholder="请输入您的联系电话" value="{{formData.phone}}"/>
+      </view>
+      <view class="form-cell">
+        <lable>现居住地</lable>
+        <input type="text" name="residence" placeholder="请输入您的现居住地" value="{{formData.residence}}"/>
+      </view>
+      <view class="form-cell">
+        <lable>昵称</lable>
+        <input type="text" name="professional" placeholder="(选填)" value="{{formData.professional}}"/>
+      </view>
+      <view class="form-cell">
+        <lable>现从事职业</lable>
+        <input type="text" name="job" placeholder="(选填)" value="{{formData.job}}"/>
+      </view>
+      <view class="form-cell">
+        <lable>民族</lable>
+        <input type="text" name="nation" placeholder="(选填)" value="{{formData.nation}}"/>
+      </view>
+      <view class="form-cell">
+        <lable>就业意向</lable>
+        <input type="text" name="intention" placeholder="(选填)" value="{{formData.intention}}"/>
+      </view>
+      <view class="form-cell">
+        <lable>政治面貌</lable>
+        <input type="text" name="political" placeholder="(选填)" value="{{formData.political}}"/>
+      </view>
+      <view class="form-cell">
+        <lable>期待薪酬(月薪)</lable>
+        <input type="number" name="salary" placeholder="(选填)" value="{{formData.salary}}"/>
+      </view>
+      <view class="form-cell">
+        <lable>期待工作地点</lable>      
+        <picker mode="selector" bindchange="pickerChange" range="{{workplaceArray}}" value="{{formData.expectAddress}}" data-type="formData.expectAddress">          
+            {{workplaceArray[formData.expectAddress]}}
+          </picker>
+      </view>
+      
+      <view class="head-title">上传/拍摄个人头像</view>   
+      <image src="{{formData.photo?formData.photo:'/images/add.png'}}" class="head-pic" bindtap="addPic"></image>
+      <view class="privacy">
+        <checkbox-group bindchange="checkboxChange">
+          <checkbox value="agree" checked="{{agree}}"/>
+          </checkbox-group>
+          同意此<span bindtap="mask">隐私协议</span>
+      </view>
+      <button class="form-btn" form-type="submit">提交</button>
+    </form>
+  </view>   
+</view>
+
+<view class="mask" wx:if="{{show}}">  
+  <scroll-view class="content-box" style="height:500rpx;" scroll-y="true">
+    <view class="content">
+      <view style="font-weight: bold;text-align: center;">清云健康照护师小程序隐私保护指引</view>
+      <view>本指引是清云健康照护师小程序开发者 "南京清科信息科技有限公司"（以下简称“开发者”）为处理你的个人信息而制定。</view>
+
+      <view>开发者处理的信息</view>
+      <view>根据法律规定，开发者仅处理实现小程序功能所必要的信息。</view>
+
+      <view>开发者 收集你选中的照片或视频信息，用于个人信息展示。</view>
+
+      <view>为了个人信息个性化显示，开发者将在获取你的明示同意后，收集你的微信昵称、头像。</view>
+      <view>为了位置信息确认以及后续相关位置服务，开发者将在获取你的明示同意后，收集你的位置信息。</view>
+      <view>为了明确并关联用户信息以及发送相关通知短信，开发者将在获取你的明示同意后，收集你的手机号。</view>
+      <view>开发者 收集你的身份证号码，用于明确个人身份信息,确认本人信息。</view>
+
+      <view>你的权益</view>
+      <view>关于收集你选中的照片或视频信息、收集你选中的照片或视频信息，你可以通过以下路径：小程序主页右上角“...” — “设置” — “小程序已获取的信息” — 点击特定信息 — 点击“通知开发者删除”，开发者承诺收到通知后将删除信息。</view>
+
+      <view>关于你的个人信息，你可以通过以下方式与开发者联系，行使查阅、复制、更正、删除等法定权利。</view>
+
+      <view>邮箱:290616329@qq.com</view>
+
+      <view>开发者对信息的存储</view>
+      <view>开发者承诺，除法律法规另有规定外，开发者对你的信息的保存期限应当为实现处理目的所必要的最短时间。</view>
+
+      <view>信息的使用规则</view>
+      <view>开发者将会在本指引所明示的用途内使用收集的信息</view>
+
+      <view>如开发者使用你的信息超出本指引目的或合理范围，开发者必须在变更使用目的或范围前，再次以弹窗方式告知并征得你的明示同意。</view>
+
+      <view>信息对外提供</view>
+      <view>开发者承诺，不会主动共享或转让你的信息至任何第三方，如存在确需共享或转让时，开发者应当直接征得或确认第三方征得你的单独同意。</view>
+
+      <view>开发者承诺，不会对外公开披露你的信息，如必须公开披露时，开发者应当向你告知公开披露的目的、披露信息的类型及可能涉及的信息，并征得你的单独同意。</view>
+
+      <view>你认为开发者未遵守上述约定，或有其他的投诉建议、或未成年人个人信息保护相关问题，可通过以下方式与开发者联系；或者向微信进行投诉。
+      邮箱 : 290616329@qq.com</view>
+      <view class="btn-box">
+        <button class="form-btn" bindtap="readEnd" style="margin: 30rpx auto 0;">确认</button>
+      </view>
+  </view>
+  </scroll-view>
+</view>

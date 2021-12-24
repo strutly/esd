@@ -1,0 +1,43 @@
+<include src="/pages/template/video.wxml"></include>
+<view class="main-box">
+  <view class="item-box"  bindtap="detail">
+    <view class="top-item">
+      <view class="top-lable">评估项目</view>
+      <view class="top-value">15项</view>
+    </view>
+    <view class="top-item" wx:for="{{newResult}}" wx:key="{{item.type}}">
+      <view class="top-lable">{{types[item.type]}}</view>
+      <view class="top-value top-value-{{item.type}}">{{item.data.length}}项</view>
+    </view>
+  </view>
+  <view class="item-box padding0" wx:for="{{practice}}" wx:key="index">
+    <view class="video-title">
+      <span class="top-value-{{item.type}}"></span>
+      <label>{{item.title}}</label>
+    </view>
+    <scroll-view scroll-x="true" class="video-box">
+      <view class="video-item-box">        
+        <view class="item-cells">          
+          <view wx:for="{{item.videos}}" wx:for-item="video" class="item-cell" bindtap="playVideo" data-url="{{video.url}}">
+            <view class="item-cell-image-box">
+              <image src="{{video.cover}}" class="item-cell-image-back"></image>
+              <image src="/images/play.png" class="item-cell-image-play"></image>
+            </view>            
+            <view class="item-cell-title">
+              <lable>{{video.title}}</lable>
+            </view>
+          </view> 
+                    
+        </view>        
+      </view>
+    </scroll-view>    
+  </view>
+
+
+  
+
+  <view class="btn-box">
+    <view class="btn">精确评估</view>
+  </view>
+
+</view>

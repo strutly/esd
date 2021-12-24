@@ -1,0 +1,94 @@
+/* pages/disability/form.wxss */
+Page{
+  background-color: #f3f3f3;
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+  font-size: 34rpx;
+}
+.main-box{
+  padding-bottom: calc(120rpx + constant(safe-area-inset-bottom));
+  padding-bottom: calc(120rpx + env(safe-area-inset-bottom));
+}
+
+.form-item{
+  border-radius: 24rpx;
+  background-color: #fff;
+  width: 92%;
+  margin:30rpx auto;
+  overflow: hidden;
+}
+.item-title{
+  
+  text-align: center;
+  overflow: hidden;
+  line-height: 100rpx;
+  height: 100rpx;
+}
+
+.form-item:nth-child(odd) .item-title{
+  background-color: #3AC7F4;
+}
+
+.form-item:nth-child(even) .item-title{
+  background-color:#96ddf3;
+}
+
+.form-check__label{
+  display: flex;
+  
+  align-items: center;
+}
+.form-cell__hd{
+  margin: 30rpx;
+}
+.form-cell__bd{
+  flex: 1;
+  line-height: 1.4;  
+}
+.btn-box{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+.btn{
+  width: 76%;
+  margin: 30rpx auto;
+  background:#3AC7F4;
+  height: 90rpx;
+  text-align: center;
+  color: #fff;
+  line-height: 90rpx;
+  border-radius: 45rpx;
+}
+
+radio-group .wx-radio-input{ 
+  width: 40rpx;
+  height: 40rpx;
+  border: 4rpx solid #aaa !important;/* 设置边框（外圆） */
+}
+
+radio-group .wx-radio-input.wx-radio-input-checked{
+  border: 4rpx solid #3AC7F4 !important;
+  background:#3AC7F4 !important;
+}
+
+radio-group .wx-radio-input.wx-radio-input-checked::before{
+  border-radius: 50%;
+  text-align: center;
+  color: #3AC7F4;
+  width: 40rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  background-color: #fff !important;
+  font-size: 24rpx;
+  font-weight: bolder;
+  transform:translate(-50%, -50%) scale(1);
+  -webkit-transform:translate(-50%, -50%) scale(1);
+}
+
+
+

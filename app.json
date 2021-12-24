@@ -1,0 +1,18 @@
+{
+  "pages": [    
+    
+    
+    "pages/disability/form",
+    "pages/disability/result",
+    "pages/disability/detail",
+    "pages/caregiver/form" 
+    
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "健康照护师",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json"
+}

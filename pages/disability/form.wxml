@@ -1,0 +1,23 @@
+<view class="main-box">
+  <form>
+    <view class="form-item" wx:for="{{questions}}" wx:for-item="question">
+      <view class="item-title" bindtap="itemChange" data-index="{{index}}">{{question.title}}</view>
+      <view class="item-content">
+        <radio-group bindchange="radioChange" data-index="{{index}}">
+          <label class="form-check__label" wx:for="{{question.checks}}" wx:for-index="k" wx:key="{{item.lable}}" wx:if="{{question.show || (k==0 && question.check==-1) || question.check == k}}">
+            <view class="form-cell__hd">
+              <radio value="{{k}}" checked="{{k==question.check}}"/>
+            </view>
+            <view class="form-cell__bd">{{item.lable}}</view>
+          </label>
+        </radio-group>
+      </view>
+    </view>
+    
+    <view class="btn-box">
+      <view class="btn" bindtap="submit">查看报告</view>
+    </view>
+  </form>
+
+
+</view>

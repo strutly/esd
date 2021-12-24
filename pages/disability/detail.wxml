@@ -1,0 +1,9 @@
+<view class="item" wx:for="{{question}}">
+  <view class="item-head">
+    <view class="item-title">{{item.title}}</view>
+    <view class="item-score item-score-{{item.score}}">!</view>
+  </view>
+  <view class="item-content">
+    {{item.lable}}
+  </view>
+</view>
