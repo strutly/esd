@@ -4,7 +4,7 @@ Page({
   data: {
     questions: [{
       title: "肢体瘫痪",
-      show: false,
+      show: true,
       check: -1,
       checks: [{
         lable: "正常"
