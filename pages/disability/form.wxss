@@ -35,15 +35,14 @@ Page{
 
 .form-check__label{
   display: flex;
-  
-  align-items: center;
+  align-items: top;
+  padding: 30rpx;
 }
 .form-cell__hd{
-  margin: 30rpx;
+  margin-right: 30rpx;
 }
 .form-cell__bd{
   flex: 1;
-  line-height: 1.4;  
 }
 .btn-box{
   position: fixed;

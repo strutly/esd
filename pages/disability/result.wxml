@@ -12,7 +12,7 @@
   </view>
   <view class="item-box padding0" wx:for="{{practice}}" wx:key="index">
     <view class="video-title">
-      <span class="top-value-{{item.type}}"></span>
+      <span class="span-back-{{item.type}}"></span>
       <label>{{item.title}}</label>
     </view>
     <scroll-view scroll-x="true" class="video-box">

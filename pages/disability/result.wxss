@@ -59,6 +59,20 @@ Page{
   background-color: #F85A6D;
   margin: 30rpx;
 }
+.span-back-0{
+  background-color: #3AC7F4 !important;
+}
+.span-back-1{
+  background-color: #C280FF !important;
+}
+.span-back-2{
+  background-color: #F59A23 !important;
+}
+.span-back-3{
+  background-color:#F85A6D !important;
+}
+
+
 .video-title label{
   flex:1;  
 }

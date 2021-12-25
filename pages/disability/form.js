@@ -2,239 +2,224 @@ var that;
 const app = getApp();
 Page({
   data: {
-    questions:[{
-      title:"肢体瘫痪",
-      show:true,
-      check:-1,
-      checks:[{
-        lable:"正常"
-      },{
-        lable:"不需要加强试验即可发现有僵直，但关节的活动范围不受限且可轻松达到。"
-      },{
-        lable:"不需要加强试验即可发现有僵直;需要用力才能使关节的活动范围不受限。"
-      },{
-        lable:"不需要加强试验即可发现有僵直，且关节的活动范围受限。"
+    questions: [{
+      title: "肢体瘫痪",
+      show: false,
+      check: -1,
+      checks: [{
+        lable: "正常"
+      }, {
+        lable: "存在肢体偏瘫、关节僵硬、胳膊挎篮、足内外翻、足下垂、走路摇晃等表现。"
       }]
-    },{
-      title:"肢体痉挛",
-      show:false,
-      check:-1,
-      checks:[{
-        lable:"正常"
-      },{
-        lable:"不需要加强试验即可发现有僵直，但关节的活动范围不受限且可轻松达到。"
-      },{
-        lable:"不需要加强试验即可发现有僵直;需要用力才能使关节的活动范围不受限。"
-      },{
-        lable:"不需要加强试验即可发现有僵直，且关节的活动范围受限。"
+    },
+    {
+      title: "肢体痉挛",
+      show: false,
+      check: -1,
+      checks: [{
+        lable: "没有僵直"
+      }, {
+        lable: "不需要加强试验即可发现有僵直，但关节的活动范围不受限且可轻松达到。"
+      }, {
+        lable: "不需要加强试验即可发现有僵直；需要用力才能使关节的活动范围不受限。"
+      }, {
+        lable: "不需要加强试验即可发现有僵直，且关节的活动范围受限。"
       }]
-    },{
-      title:"运动迟缓",
-      show:false,
-      check:-1,
-      checks:[{
-        lable:"正常"
-      },{
-        lable:"不需要加强试验即可发现有僵直，但关节的活动范围不受限且可轻松达到。"
-      },{
-        lable:"不需要加强试验即可发现有僵直;需要用力才能使关节的活动范围不受限。"
-      },{
-        lable:"不需要加强试验即可发现有僵直，且关节的活动范围受限。"
+    },
+    {
+      title: "运动迟缓",
+      show: false,
+      check: -1,
+      checks: [{
+        lable: "正常"
+      }, {
+        lable: "全身性活动和自发性运动存在变慢或减少。"
       }]
-    },{
-      title:"运动迟缓",
-      show:false,
-      check:-1,
-      checks:[{
-        lable:"正常"
-      },{
-        lable:"不需要加强试验即可发现有僵直，但关节的活动范围不受限且可轻松达到。"
-      },{
-        lable:"不需要加强试验即可发现有僵直;需要用力才能使关节的活动范围不受限。"
-      },{
-        lable:"不需要加强试验即可发现有僵直，且关节的活动范围受限。"
+    },
+    {
+      title: "平衡障碍",
+      show: false,
+      check: -1,
+      checks: [{
+        lable: "没有问题，可以快速毫不迟疑地站起来。"
+      }, {
+        lable: "自己手扶扶手即可轻松站起来。"
+      }, {
+        lable: "需要扶扶手，但容易再跌回椅子上；或是需要尝试一次以上才能扶着扶手站起来，但还是不需要别人帮助。"
+      }, {
+        lable: "没有别人帮助的情况下站不起来。"
       }]
-    },{
-      title:"运动迟缓",
-      show:false,
-      check:-1,
-      checks:[{
-        lable:"正常"
-      },{
-        lable:"不需要加强试验即可发现有僵直，但关节的活动范围不受限且可轻松达到。"
-      },{
-        lable:"不需要加强试验即可发现有僵直;需要用力才能使关节的活动范围不受限。"
-      },{
-        lable:"不需要加强试验即可发现有僵直，且关节的活动范围受限。"
+    },
+    {
+      title: "步行障碍",
+      show: false,
+      check: -1,
+      checks: [{
+        lable: "没有问题。"
+      }, {
+        lable: "有明显的步态损害但还可以独立行走。"
+      }, {
+        lable: "需要辅助工具才能安全地行走（拐杖或助行器）但不需要别人的帮助。"
+      }, {
+        lable: "完全不能行走或是只有在别人的帮助下才能行走。"
       }]
-    },{
-      title:"运动迟缓",
-      show:false,
-      check:-1,
-      checks:[{
-        lable:"正常"
-      },{
-        lable:"不需要加强试验即可发现有僵直，但关节的活动范围不受限且可轻松达到。"
-      },{
-        lable:"不需要加强试验即可发现有僵直;需要用力才能使关节的活动范围不受限。"
-      },{
-        lable:"不需要加强试验即可发现有僵直，且关节的活动范围受限。"
+    },
+    {
+      title: "肌肉衰减",
+      show: false,
+      check: -1,
+      checks: [{
+        lable: "正常"
+      }, {
+        lable: "在过去的一年中出现体重下降3公斤以上或者发生跌倒"
       }]
-    },{
-      title:"运动迟缓",
-      show:false,
-      check:-1,
-      checks:[{
-        lable:"正常"
-      },{
-        lable:"不需要加强试验即可发现有僵直，但关节的活动范围不受限且可轻松达到。"
-      },{
-        lable:"不需要加强试验即可发现有僵直;需要用力才能使关节的活动范围不受限。"
-      },{
-        lable:"不需要加强试验即可发现有僵直，且关节的活动范围受限。"
+    },
+    {
+      title: "关节活动受限",
+      show: false,
+      check: -1,
+      checks: [{
+        lable: "正常"
+      }, {
+        lable: "目测存在关节活动度下降，无法达成预期动作"
       }]
-    },{
-      title:"运动迟缓",
-      show:false,
-      check:-1,
-      checks:[{
-        lable:"正常"
-      },{
-        lable:"不需要加强试验即可发现有僵直，但关节的活动范围不受限且可轻松达到。"
-      },{
-        lable:"不需要加强试验即可发现有僵直;需要用力才能使关节的活动范围不受限。"
-      },{
-        lable:"不需要加强试验即可发现有僵直，且关节的活动范围受限。"
+    },
+    {
+      title: "吞咽功能障碍",
+      show: false,
+      check: -1,
+      checks: [{
+        lable: "正常"
+      }, {
+        lable: "吞咽后咳嗽；进食或饮水后出现声音嘶哑、吞咽过程延长；咀嚼时间延长、吃饭速度下降；吃饭后出现流眼泪或脸部发红；吃饭和饮水以后出现呼吸困难；吞咽时有头颈部的辅助运动"
       }]
-    },{
-      title:"运动迟缓",
-      show:false,
-      check:-1,
-      checks:[{
-        lable:"正常"
-      },{
-        lable:"不需要加强试验即可发现有僵直，但关节的活动范围不受限且可轻松达到。"
-      },{
-        lable:"不需要加强试验即可发现有僵直;需要用力才能使关节的活动范围不受限。"
-      },{
-        lable:"不需要加强试验即可发现有僵直，且关节的活动范围受限。"
+    },
+    {
+      title: "言语功能障碍",
+      show: false,
+      check: -1,
+      checks: [{
+        lable: "没有问题。"
+      }, {
+        lable: "别人偶尔需要我重复说一遍，但不是每天都这样。"
+      }, {
+        lable: "我说话不清楚，以至于每天都会有人要求我重复说，但大部分内容他们还是能理解。"
+      }, {
+        lable: "别人大部分时间或完全不能听懂我讲话。"
       }]
-    },{
-      title:"运动迟缓",
-      show:false,
-      check:-1,
+    },
+    {
+      title: "尿便失禁",
+      show: false,
+      check: -1,
+      checks: [{
+        lable: "正常"
+      }, {
+        lable: "在过去的一周内，存在控制排尿的困难，例如，尿急、尿频、或尿失禁"
+      }]
+    },
+    {
+      title: "血栓栓塞风险",
+      show: false,
+      check: -1,
+      checks: [{
+        lable: "正常"
+      }, {
+        lable: "存在长期卧床、行动迟缓、下肢肿胀现象，或既往发生过血栓栓塞情况"
+      }]
+    },
+    {
+      title: "抑郁情绪",
+      show: false,
+      check: -1,
+      checks: [{
+        lable: "没有抑郁情绪。"
+      }, {
+        lable: "抑郁情绪会持续几天，但不会影响日常生活或社会交往。"
+      }, {
+        lable: "抑郁情绪影响了患者的日常活动及社会交往，但患者仍能从事这样的活动。"
+      }, {
+        lable: "抑郁情绪已使患者无法进行日常活动及社会交往。"
+      }]
+    },
+    {
+      title: "认知障碍",
+      show: false,
+      check: -1,
+      checks: [{
+        lable: "没有认知功能损害。"
+      }, {
+        lable: "临床上已有明显的认知功能损害，但仅对日常活动或社会交往产生轻微影响。"
+      }, {
+        lable: "认知功能损害影响了患者的日常活动或社会交往，但患者仍能进行这样的活动。"
+      }, {
+        lable: "认知功能损害使得患者无法进行正常的日常活动或社会交往。"
+      }]
+    },
+    {
+      title: "疼痛",
+      show: false,
+      check: -1,
+      checks: [{
+        lable: "没有不适的感觉"
+      }, {
+        lable: "这些不适的感觉使我在做事和与人相处时有一定的困扰"
+      }, {
+        lable: "这些不适的感觉给我造成很大的困扰，但我仍能做事或与人相处"
+      }, {
+        lable: "这些不适的感觉使我无法做事或与人相处。"
+      }]
+    },
+    {
+      title: "日常生活能力减退",
+      show: false,
+      check: -1,
+      checks: [{
+        lable: "正常"
+      }, {
+        lable: "进食困难：在过去三月内，在进食和使用餐具上有困难.例如，用手拿食物或使用汤勺、筷子有困难"
+      }, {
+        lable: "穿衣困难：在过去三月内，穿衣有困难。例如，穿衣缓慢或需要别人帮忙扣扣子，拉拉链，穿脱衣服"
+      }, {
+        lable: "卫生清洁障碍：在过去三月内，在洗漱、沐浴、刮胡子、刷牙、梳头或是做其它个人卫生时，觉得动作缓慢或是需要帮助"
+      }]
+    }]
 
-      checks:[{
-        lable:"正常"
-      },{
-        lable:"不需要加强试验即可发现有僵直，但关节的活动范围不受限且可轻松达到。"
-      },{
-        lable:"不需要加强试验即可发现有僵直;需要用力才能使关节的活动范围不受限。"
-      },{
-        lable:"不需要加强试验即可发现有僵直，且关节的活动范围受限。"
-      }]
-    },{
-      title:"运动迟缓",
-      show:false,
-      check:-1,
-      checks:[{
-        lable:"正常"
-      },{
-        lable:"不需要加强试验即可发现有僵直，但关节的活动范围不受限且可轻松达到。"
-      },{
-        lable:"不需要加强试验即可发现有僵直;需要用力才能使关节的活动范围不受限。"
-      },{
-        lable:"不需要加强试验即可发现有僵直，且关节的活动范围受限。"
-      }]
-    },{
-      title:"运动迟缓",
-      show:false,
-      check:-1,
-      checks:[{
-        lable:"正常"
-      },{
-        lable:"不需要加强试验即可发现有僵直，但关节的活动范围不受限且可轻松达到。"
-      },{
-        lable:"不需要加强试验即可发现有僵直;需要用力才能使关节的活动范围不受限。"
-      },{
-        lable:"不需要加强试验即可发现有僵直，且关节的活动范围受限。"
-      }]
-    },{
-      title:"运动迟缓",
-      show:false,
-      check:-1,
-      checks:[{
-        lable:"正常"
-      },{
-        lable:"不需要加强试验即可发现有僵直，但关节的活动范围不受限且可轻松达到。"
-      },{
-        lable:"不需要加强试验即可发现有僵直;需要用力才能使关节的活动范围不受限。"
-      },{
-        lable:"不需要加强试验即可发现有僵直，且关节的活动范围受限。"
-      }]
-    },{
-      title:"运动迟缓",
-      show:false,
-      check:-1,
-      checks:[{
-        lable:"正常"
-      },{
-        lable:"不需要加强试验即可发现有僵直，但关节的活动范围不受限且可轻松达到。"
-      },{
-        lable:"不需要加强试验即可发现有僵直;需要用力才能使关节的活动范围不受限。"
-      },{
-        lable:"不需要加强试验即可发现有僵直，且关节的活动范围受限。"
-      }]
-    },{
-      title:"运动迟缓",
-      show:false,
-      check:-1,
-      checks:[{
-        lable:"正常"
-      },{
-        lable:"不需要加强试验即可发现有僵直，但关节的活动范围不受限且可轻松达到。"
-      },{
-        lable:"不需要加强试验即可发现有僵直;需要用力才能使关节的活动范围不受限。"
-      },{
-        lable:"不需要加强试验即可发现有僵直，且关节的活动范围受限。"
-      }]
-    }]     
-    
   },
 
   onLoad: function (options) {
     that = this;
   },
-  itemChange(e){
+  itemChange(e) {
     console.log(e);
     let index = e.currentTarget.dataset.index;
     let questions = that.data.questions;
-    questions.forEach((item,i)=>{
-      if(i==index){
+    questions.forEach((item, i) => {
+      if (i == index) {
         item.show = !item.show;
-      }else{
+      } else {
         item.show = false;
       }
     });
-    that.setData({questions:questions})
+    that.setData({ questions: questions })
   },
-  radioChange(e){
+  radioChange(e) {
     console.log(e);
     let index = e.currentTarget.dataset.index;
     let questions = that.data.questions;
     let question = questions[index];
 
     let val = e.detail.value;
-    
+
     question.check = val;
-    
+
     that.setData({
-      ['questions['+index+']']:question
+      ['questions[' + index + ']']: question
     })
   },
-  submit(){
-    
-    
+  submit() {
+
+
     wx.reLaunch({
       url: '/pages/disability/result',
     })
