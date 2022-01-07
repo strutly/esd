@@ -1,0 +1,7 @@
+var indexOf = function(arr,val){
+  if(!arr||!val) return false;
+  return arr.indexOf(val+"")>-1;
+}
+module.exports = {
+  indexOf:indexOf
+}

@@ -7,13 +7,42 @@ Page{
 }
 .item-box{
   border: 2rpx solid #eee;
-  border-radius: 15rpx;
+  border-radius: 24rpx;
   width: 92%;
   margin: 30rpx auto;
   padding: 0 30rpx;
   box-sizing: border-box;
   overflow: hidden;
 }
+.item-title{
+  height: 100rpx;
+  line-height: 100rpx;
+  padding: 0 30rpx;
+  background-color: #3AC7F4;
+}
+.item-lable{
+  padding-left: 66rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-bottom: 2rpx #eee solid;
+}
+.item-lable-0{
+  color: #3AC7F4;
+}
+.item-lable--1{
+  color:#aaa;
+}
+.item-lable-1{
+  color:#F85A6D;
+}
+.item-box .item-lable:last-child{
+  border-bottom: none;
+}
+.title{
+  margin: 30rpx auto;
+  text-align: center;
+}
+
 .padding0{
   padding: 0;
 }
@@ -47,6 +76,8 @@ Page{
   color:#F85A6D;  
 }
 .video-title{
+  height: 100rpx;
+  line-height: 100rpx;
   display: flex;
   align-items: center;
   background-color: #F2F2F2;

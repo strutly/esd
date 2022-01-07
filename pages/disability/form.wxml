@@ -1,20 +1,43 @@
+<wxs src="../../utils/Tools.wxs" module="tools"/>
+<template name="radio">
+  <radio-group bindchange="radioChange" data-index="{{index}}">
+    <label class="form-check__label" wx:for="{{question.checks}}" wx:for-index="k" wx:key="{{item.lable}}" wx:if="{{question.show || (k==0 && question.check==-1) || question.check == k}}">
+      <view class="form-cell__hd">
+        <radio value="{{k}}" checked="{{k==question.check}}"/>
+      </view>
+      <view class="form-cell__bd">{{item.lable}}</view>
+    </label>
+  </radio-group>
+</template>
+<template name="checkbox">
+  <radio-group bindchange="radioNormalChange" data-index="{{index}}">
+    <label class="form-check__label" wx:if="{{question.show || question.check.length==0 || question.check[0]==0}}">
+      <view class="form-cell__hd">
+        <radio value="0" checked="{{question.check[0]==0}}"/>
+      </view>
+      <view class="form-cell__bd">正常</view>
+    </label>
+  </radio-group>
+
+  <checkbox-group bindchange="checkChange" data-index="{{index}}">
+    <label class="form-check__label"  wx:for="{{question.checks}}" wx:for-index="k" wx:key="{{item.lable}}" wx:if="{{question.show || item.checked}}">
+      <view class="form-cell__hd">
+        <checkbox value="{{item.value}}" checked="{{tools.indexOf(question.check,item.value)}}"/>
+      </view>
+      <view class="form-cell__bd">{{item.lable}}</view>
+    </label>
+  </checkbox-group>
+</template>
+
 <view class="main-box">
   <form>
-    <view class="form-item" wx:for="{{questions}}" wx:for-item="question">
-      <view class="item-title" bindtap="itemChange" data-index="{{index}}">{{question.title}}</view>
+    <view class="form-item" wx:for="{{questions}}" wx:for-item="question" bindtap="itemChange" data-index="{{index}}">
+      <view class="item-title" >{{question.title}}</view>
       <view class="item-content">
-        <radio-group bindchange="radioChange" data-index="{{index}}">
-          <label class="form-check__label" wx:for="{{question.checks}}" wx:for-index="k" wx:key="{{item.lable}}" wx:if="{{question.show || (k==0 && question.check==-1) || question.check == k}}">
-            <view class="form-cell__hd">
-              <radio value="{{k}}" checked="{{k==question.check}}"/>
-            </view>
-            <view class="form-cell__bd">{{item.lable}}</view>
-          </label>
-        </radio-group>
+        <template is="{{question.checkType}}" data="{{question:question,index:index}}"/>        
       </view>
-    </view>
-    
-    <view class="btn-box">
+    </view>   
+    <view class="btn-box" wx:if="{{fromChange}}">
       <view class="btn" bindtap="submit">查看报告</view>
     </view>
   </form>

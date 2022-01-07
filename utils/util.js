@@ -13,7 +13,14 @@ const formatNumber = n => {
   n = n.toString()
   return n[1] ? n : `0${n}`
 }
+const indexOf = function(arr,val){
+  console.log(arr);
+  console.log(val)
+  if(!arr||!val) return false;
+  return arr.indexOf(val)>-1;
+}
 
 module.exports = {
-  formatTime
+  formatTime,
+  indexOf
 }

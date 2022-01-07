@@ -1,24 +1,25 @@
 <include src="/pages/template/video.wxml"></include>
 <view class="main-box">
-  <view class="item-box"  bindtap="detail">
-    <view class="top-item">
-      <view class="top-lable">评估项目</view>
-      <view class="top-value">15项</view>
+  <view class="item-box padding0" wx:for="{{result}}" wx:key="index"
+    wx:for-index="key" wx:for-item="result">
+    <view class="item-title">      
+      <label>{{categorys[key]}}</label>
     </view>
-    <view class="top-item" wx:for="{{newResult}}" wx:key="{{item.type}}">
-      <view class="top-lable">{{types[item.type]}}</view>
-      <view class="top-value top-value-{{item.type}}">{{item.data.length}}项</view>
+    <view class="item-lable" wx:for="{{result}}" wx:key="index" wx:for-index="key1" wx:for-item="value">
+      <label class="item-lable-{{value}}">{{key1}}</label>
     </view>
   </view>
-  <view class="item-box padding0" wx:for="{{practice}}" wx:key="index">
-    <view class="video-title">
-      <span class="span-back-{{item.type}}"></span>
-      <label>{{item.title}}</label>
+  
+  <view class="title" wx:if="{{videoResult.length>0}}">居家训练内容</view>
+
+  <view class="item-box padding0" wx:for="{{showVideos}}" wx:key="index" wx:for-index="key" wx:for-item="videos" wx:if="{{videos.length>0}}">
+    <view class="item-title" style="background-color: #f2f2f2;">      
+      <label>{{practices[key]}}</label>
     </view>
     <scroll-view scroll-x="true" class="video-box">
       <view class="video-item-box">        
         <view class="item-cells">          
-          <view wx:for="{{item.videos}}" wx:for-item="video" class="item-cell" bindtap="playVideo" data-url="{{video.url}}">
+          <view wx:for="{{videos}}" wx:for-item="video" class="item-cell" bindtap="playVideo" data-url="{{video.url}}">
             <view class="item-cell-image-box">
               <image src="{{video.cover}}" class="item-cell-image-back"></image>
               <image src="/images/play.png" class="item-cell-image-play"></image>

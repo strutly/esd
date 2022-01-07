@@ -90,6 +90,30 @@ radio-group .wx-radio-input.wx-radio-input-checked::before{
   transform:translate(-50%, -50%) scale(1);
   -webkit-transform:translate(-50%, -50%) scale(1);
 }
+checkbox .wx-checkbox-input {
+  width: 40rpx;
+  height: 40rpx;
+  border: 4rpx solid #aaa !important;/* 设置边框（外圆） */
+}
+/*checkbox选中后样式  */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+  border: 4rpx solid #3AC7F4 !important;
+  background:#fff !important;
+}
+
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+  border-radius: 50%;
+  text-align: center;
+  color: #3AC7F4;
+  width: 40rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  background-color: #fff !important;
+  font-size: 24rpx;
+  font-weight: bolder;
+  transform:translate(-50%, -50%) scale(1);
+  -webkit-transform:translate(-50%, -50%) scale(1);
+}
 
 
 

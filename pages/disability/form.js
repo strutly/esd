@@ -2,19 +2,26 @@ var that;
 const app = getApp();
 Page({
   data: {
+    fromChange:false,
     questions: [{
       title: "肢体瘫痪",
+      category:0,
+      type:1,
       show: true,
+      checkType: 'radio',
       check: -1,
       checks: [{
-        lable: "正常"
+        lable: "正常"        
       }, {
         lable: "存在肢体偏瘫、关节僵硬、胳膊挎篮、足内外翻、足下垂、走路摇晃等表现。"
       }]
     },
     {
       title: "肢体痉挛",
+      category:0,
+      type:2,
       show: false,
+      checkType: 'radio',
       check: -1,
       checks: [{
         lable: "没有僵直"
@@ -28,7 +35,10 @@ Page({
     },
     {
       title: "运动迟缓",
+      category:0,
+      type:3,
       show: false,
+      checkType: 'radio',
       check: -1,
       checks: [{
         lable: "正常"
@@ -38,7 +48,10 @@ Page({
     },
     {
       title: "平衡障碍",
+      category:0,
+      type:4,
       show: false,
+      checkType: 'radio',
       check: -1,
       checks: [{
         lable: "没有问题，可以快速毫不迟疑地站起来。"
@@ -52,7 +65,10 @@ Page({
     },
     {
       title: "步行障碍",
+      category:0,
+      type:5,
       show: false,
+      checkType: 'radio',
       check: -1,
       checks: [{
         lable: "没有问题。"
@@ -66,7 +82,10 @@ Page({
     },
     {
       title: "肌肉衰减",
+      category:0,
+      type:6,
       show: false,
+      checkType: 'radio',
       check: -1,
       checks: [{
         lable: "正常"
@@ -76,7 +95,10 @@ Page({
     },
     {
       title: "关节活动受限",
+      category:0,
+      type:7,
       show: false,
+      checkType: 'radio',
       check: -1,
       checks: [{
         lable: "正常"
@@ -86,7 +108,10 @@ Page({
     },
     {
       title: "吞咽功能障碍",
+      category:1,
+      type:8,
       show: false,
+      checkType: 'radio',
       check: -1,
       checks: [{
         lable: "正常"
@@ -96,7 +121,10 @@ Page({
     },
     {
       title: "言语功能障碍",
+      category:1,
+      type:9,
       show: false,
+      checkType: 'radio',
       check: -1,
       checks: [{
         lable: "没有问题。"
@@ -110,7 +138,10 @@ Page({
     },
     {
       title: "尿便失禁",
+      category:1,
+      type:10,
       show: false,
+      checkType: 'radio',
       check: -1,
       checks: [{
         lable: "正常"
@@ -120,7 +151,10 @@ Page({
     },
     {
       title: "血栓栓塞风险",
+      category:1,
+      type:11,
       show: false,
+      checkType: 'radio',
       check: -1,
       checks: [{
         lable: "正常"
@@ -130,7 +164,10 @@ Page({
     },
     {
       title: "抑郁情绪",
+      category:2,
+      type:12,
       show: false,
+      checkType: 'radio',
       check: -1,
       checks: [{
         lable: "没有抑郁情绪。"
@@ -144,7 +181,10 @@ Page({
     },
     {
       title: "认知障碍",
+      category:2,
+      type:13,
       show: false,
+      checkType: 'radio',
       check: -1,
       checks: [{
         lable: "没有认知功能损害。"
@@ -158,7 +198,10 @@ Page({
     },
     {
       title: "疼痛",
+      category:2,
+      type:14,
       show: false,
+      checkType: 'radio',
       check: -1,
       checks: [{
         lable: "没有不适的感觉"
@@ -172,21 +215,49 @@ Page({
     },
     {
       title: "日常生活能力减退",
+      category:3,
+      type:15,
       show: false,
-      check: -1,
+      checkType: 'checkbox',
+      check:[],    
       checks: [{
-        lable: "正常"
+        title:"进食困难",
+        lable: "进食困难：在过去三月内，在进食和使用餐具上有困难.例如，用手拿食物或使用汤勺、筷子有困难",
+        value:1
       }, {
-        lable: "进食困难：在过去三月内，在进食和使用餐具上有困难.例如，用手拿食物或使用汤勺、筷子有困难"
+        title:"穿衣困难",
+        lable: "穿衣困难：在过去三月内，穿衣有困难。例如，穿衣缓慢或需要别人帮忙扣扣子，拉拉链，穿脱衣服",
+        value:2
       }, {
-        lable: "穿衣困难：在过去三月内，穿衣有困难。例如，穿衣缓慢或需要别人帮忙扣扣子，拉拉链，穿脱衣服"
-      }, {
-        lable: "卫生清洁障碍：在过去三月内，在洗漱、沐浴、刮胡子、刷牙、梳头或是做其它个人卫生时，觉得动作缓慢或是需要帮助"
+        title:"卫生清洁障碍",
+        lable: "卫生清洁障碍：在过去三月内，在洗漱、沐浴、刮胡子、刷牙、梳头或是做其它个人卫生时，觉得动作缓慢或是需要帮助",
+        value:3
       }]
-    }]
-
+    }],
+    result:{0:{
+      肢体瘫痪:-1,
+      肢体痉挛:-1,
+      运动迟缓:-1,
+      平衡障碍:-1,
+      步行障碍:-1,
+      肌肉衰减:-1,
+      关节活动受限:-1
+    },1:{
+      吞咽功能障碍:-1,
+      言语功能障碍:-1,
+      尿便失禁:-1,
+      血栓栓塞风险:-1
+    },2:{
+      抑郁情绪:-1,
+      认知障碍:-1,
+      疼痛:-1
+    },3:{
+      进食障碍:-1,
+      穿衣障碍:-1,
+      卫生清洁障碍:-1
+    }},
+    videoResult:[]
   },
-
   onLoad: function (options) {
     that = this;
   },
@@ -194,6 +265,8 @@ Page({
     console.log(e);
     let index = e.currentTarget.dataset.index;
     let questions = that.data.questions;
+    let question = questions[index];
+    if(question.show) return;
     questions.forEach((item, i) => {
       if (i == index) {
         item.show = !item.show;
@@ -209,19 +282,108 @@ Page({
     let questions = that.data.questions;
     let question = questions[index];
 
-    let val = e.detail.value;
+    if(!question.show) return;
 
-    question.check = val;
+    let val = e.detail.value;
+    question.check = val;    
+    let result = that.data.result;
+    result[question.category][question.title] = question.check>0?1:0;
+    let videoResult = that.data.videoResult;
+    let setResult = new Set(videoResult);
+    if(val>0){
+      setResult.add(question.type);
+    }else{
+      setResult.delete(question.type);
+    };
+    that.setData({
+      ['questions[' + index + ']']: question,
+      result:result,
+      videoResult:Array.from(setResult),
+      fromChange:true
+    });    
+  },
+  radioNormalChange(e){
+    console.log(e);
+    let index = e.currentTarget.dataset.index;
+    let question = that.data.questions[index];
+    if(!question.show) return;
+    question.check = [0];
+    let result = that.data.result;
+    let videoResult = that.data.videoResult;
+    let setResult = new Set(videoResult);
+    setResult.delete(question.type);
+    result[question.category] = {
+      进食障碍:0,
+      穿衣障碍:0,
+      卫生清洁障碍:0,
+    }
+    that.setData({
+      ['questions['+index+']']:question,
+      result:result,
+      videoResult:Array.from(setResult),
+      fromChange:true
+    })
+  },
+  checkChange(e){
+    console.log(e);
+    let index = e.currentTarget.dataset.index;
+    let question = that.data.questions[index];
+    if(!question.show) return;
+    question.check = e.detail.value;
+
+    let result = that.data.result;    
+    let value = e.detail.value;
+    let checks = [{
+      title:"进食障碍",
+      lable: "进食困难：在过去三月内，在进食和使用餐具上有困难.例如，用手拿食物或使用汤勺、筷子有困难",
+      value:1
+    }, {
+      title:"穿衣障碍",
+      lable: "穿衣困难：在过去三月内，穿衣有困难。例如，穿衣缓慢或需要别人帮忙扣扣子，拉拉链，穿脱衣服",
+      value:2
+    }, {
+      title:"卫生清洁障碍",
+      lable: "卫生清洁障碍：在过去三月内，在洗漱、沐浴、刮胡子、刷牙、梳头或是做其它个人卫生时，觉得动作缓慢或是需要帮助",
+      value:3
+    }];
+
+    result[question.category] = {
+      进食障碍:-1,
+      穿衣障碍:-1,
+      卫生清洁障碍:-1
+    };
+    let videoResult = that.data.videoResult;
+    let setResult = new Set(videoResult);
+    value.forEach(val=>{
+      let check = checks.find( (check) => {
+        return check.value ==val;
+      });      
+      if(check){
+        result[question.category][check.title] = check.value>0?1:0;
+      }
+    })
+    if(value.length>0){
+      setResult.add(question.type);
+    }else{
+      setResult.delete(question.type);
+    }  
 
     that.setData({
-      ['questions[' + index + ']']: question
+      ['questions['+index+']']:question,
+      result:result,
+      videoResult:Array.from(setResult),
+      fromChange:true
     })
   },
   submit() {
-
-
+    let fromData = wx.getStorageSync('fromData')||[];
+    fromData.push({
+      result:that.data.result,
+      videoResult:that.data.videoResult
+    });
+    wx.setStorageSync('fromData', fromData);
     wx.reLaunch({
-      url: '/pages/disability/result',
+      url: '/pages/disability/result?index='+(fromData.length-1),
     })
   }
 })
