@@ -1,4 +1,38 @@
 <wxs src="../../utils/Tools.wxs" module="tools"/>
+<template name="show">
+  <template is="{{question.checkType}}" data="{{question:question,index:index}}"/>
+</template>
+
+
+<template name="hidden">
+  <template is="hidden_{{question.checkType}}" data="{{question:question,index:index}}"/>
+</template>
+
+<template name="hidden_radio">  
+  <label  bindtap="itemChange" data-index="{{index}}" class="form-check__label" wx:for="{{question.checks}}" wx:for-index="k" wx:key="{{item.lable}}" wx:if="{{question.show || (k==0 && question.check==-1) || question.check == k}}">
+    <view class="form-cell__hd">
+      <view class="form-radio {{k==question.check?'form-radio-checked':''}}"></view>
+    </view>
+    <view class="form-cell__bd">{{item.lable}}</view>
+  </label>
+</template>
+
+<template name="hidden_checkbox">
+  <label  bindtap="itemChange" data-index="{{index}}" class="form-check__label" wx:if="{{question.show || question.check.length==0 || question.check[0]==0}}">
+    <view class="form-cell__hd">
+      <view class="form-radio {{question.check[0]==0?'form-radio-checked':''}}"></view>
+    </view>
+    <view class="form-cell__bd">正常</view>
+  </label>
+  <label  bindtap="itemChange" data-index="{{index}}" class="form-check__label"  wx:for="{{question.checks}}" wx:for-index="k" wx:key="{{item.lable}}" wx:if="{{question.show || tools.indexOf(question.check,item.value)}}">
+    <view class="form-cell__hd">
+      <view class="form-checkbox {{tools.indexOf(question.check,item.value)?'form-checkbox-checked':''}}"></view>      
+    </view>
+    <view class="form-cell__bd">{{item.lable}}</view>
+  </label>
+</template>
+
+
 <template name="radio">
   <radio-group bindchange="radioChange" data-index="{{index}}">
     <label class="form-check__label" wx:for="{{question.checks}}" wx:for-index="k" wx:key="{{item.lable}}" wx:if="{{question.show || (k==0 && question.check==-1) || question.check == k}}">
@@ -20,7 +54,7 @@
   </radio-group>
 
   <checkbox-group bindchange="checkChange" data-index="{{index}}">
-    <label class="form-check__label"  wx:for="{{question.checks}}" wx:for-index="k" wx:key="{{item.lable}}" wx:if="{{question.show || item.checked}}">
+    <label class="form-check__label"  wx:for="{{question.checks}}" wx:for-index="k" wx:key="{{item.lable}}" wx:if="{{question.show || tools.indexOf(question.check,item.value)}}">
       <view class="form-cell__hd">
         <checkbox value="{{item.value}}" checked="{{tools.indexOf(question.check,item.value)}}"/>
       </view>
@@ -31,10 +65,10 @@
 
 <view class="main-box">
   <form>
-    <view class="form-item" wx:for="{{questions}}" wx:for-item="question" bindtap="itemChange" data-index="{{index}}">
-      <view class="item-title" >{{question.title}}</view>
+    <view class="form-item" wx:for="{{questions}}" wx:for-item="question">
+      <view class="item-title" bindtap="itemChange" data-index="{{index}}">{{question.title}}</view>
       <view class="item-content">
-        <template is="{{question.checkType}}" data="{{question:question,index:index}}"/>        
+        <template is="{{question.show?'show':'hidden'}}" data="{{question:question,index:index}}"/>        
       </view>
     </view>   
     <view class="btn-box" wx:if="{{fromChange}}">

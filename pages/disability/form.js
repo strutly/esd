@@ -265,8 +265,8 @@ Page({
     console.log(e);
     let index = e.currentTarget.dataset.index;
     let questions = that.data.questions;
-    let question = questions[index];
-    if(question.show) return;
+    
+    
     questions.forEach((item, i) => {
       if (i == index) {
         item.show = !item.show;
@@ -282,8 +282,8 @@ Page({
     let questions = that.data.questions;
     let question = questions[index];
 
-    if(!question.show) return;
-
+    
+    
     let val = e.detail.value;
     question.check = val;    
     let result = that.data.result;
@@ -306,7 +306,7 @@ Page({
     console.log(e);
     let index = e.currentTarget.dataset.index;
     let question = that.data.questions[index];
-    if(!question.show) return;
+    
     question.check = [0];
     let result = that.data.result;
     let videoResult = that.data.videoResult;
@@ -328,7 +328,7 @@ Page({
     console.log(e);
     let index = e.currentTarget.dataset.index;
     let question = that.data.questions[index];
-    if(!question.show) return;
+    
     question.check = e.detail.value;
 
     let result = that.data.result;    

@@ -65,6 +65,65 @@ Page{
   line-height: 90rpx;
   border-radius: 45rpx;
 }
+.form-radio{  
+  width: 40rpx;
+  height: 40rpx;
+  border: 4rpx solid #aaa;
+  border-radius: 50%;
+}
+.form-radio-checked{
+  position: relative;
+  border-color:#3AC7F4;
+}
+.form-radio-checked::after{
+  position: absolute; 
+  color: #3AC7F4;
+  content: '';
+  width: 18rpx;
+  height: 8rpx;
+  border: 4rpx solid #3AC7F4;
+  border-top: transparent;
+  border-right: transparent;
+  transform:translate(-50%, -50%) scale(1);
+  -webkit-transform:translate(-50%, -50%) scale(1);
+  text-align: center;
+  display: block;
+  position: absolute;
+  top: 14rpx;
+  left:10rpx;
+  transform: rotate(-45deg);
+}
+
+.form-checkbox{  
+  width: 40rpx;
+  height: 40rpx;
+  border: 4rpx solid #aaa;
+  border-radius: 5rpx;
+}
+.form-checkbox-checked{
+  position: relative;
+  border-color:#3AC7F4;
+}
+.form-checkbox-checked::after{
+  position: absolute; 
+  color: #3AC7F4;
+  content: '';
+  width: 18rpx;
+  height: 8rpx;
+  border: 4rpx solid #3AC7F4;
+  border-top: transparent;
+  border-right: transparent;
+  transform:translate(-50%, -50%) scale(1);
+  -webkit-transform:translate(-50%, -50%) scale(1);
+  text-align: center;
+  display: block;
+  position: absolute;
+  top: 14rpx;
+  left:10rpx;
+  transform: rotate(-45deg);
+}
+
+
 
 radio-group .wx-radio-input{ 
   width: 40rpx;
