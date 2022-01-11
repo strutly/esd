@@ -42,6 +42,7 @@ Page{
 }
 .form-cell__hd{
   margin-right: 30rpx;
+  position: relative;
 }
 .form-cell__bd{
   flex: 1;
@@ -68,11 +69,11 @@ Page{
 .form-radio{  
   width: 40rpx;
   height: 40rpx;
-  border: 4rpx solid #aaa;
+  border:4rpx solid #aaa;
   border-radius: 50%;
 }
 .form-radio-checked{
-  position: relative;
+  position: relative;display: inline-block;
   border-color:#3AC7F4;
 }
 .form-radio-checked::after{
@@ -88,8 +89,7 @@ Page{
   -webkit-transform:translate(-50%, -50%) scale(1);
   text-align: center;
   display: block;
-  position: absolute;
-  top: 14rpx;
+  top: 12rpx;
   left:10rpx;
   transform: rotate(-45deg);
 }
@@ -123,16 +123,27 @@ Page{
   transform: rotate(-45deg);
 }
 
+radio{
+  width: 40rpx;
+  height: 40rpx;
+  border:4rpx solid #aaa;
+  border-radius: 50%;  
+}
 
-
-radio-group .wx-radio-input{ 
+radio-group .wx-radio-input{
+  position: absolute;
+  top: 0;
+  left:0;
   width: 40rpx;
   height: 40rpx;
   border: 4rpx solid #aaa !important;/* 设置边框（外圆） */
 }
 
 radio-group .wx-radio-input.wx-radio-input-checked{
-  border: 4rpx solid #3AC7F4 !important;
+  
+  width: 40rpx !important;
+  height: 40rpx !important;
+  border-color:#3AC7F4 !important;
   background:#3AC7F4 !important;
 }
 
