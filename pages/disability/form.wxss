@@ -73,25 +73,24 @@ Page{
   border-radius: 50%;
 }
 .form-radio-checked{
-  position: relative;display: inline-block;
+  display: inline-block;
   border-color:#3AC7F4;
 }
-.form-radio-checked::after{
-  position: absolute; 
+.form-radio-checked::after{  
   color: #3AC7F4;
-  content: '';
-  width: 18rpx;
-  height: 8rpx;
-  border: 4rpx solid #3AC7F4;
-  border-top: transparent;
-  border-right: transparent;
+  font: normal normal normal 14px/1 "weui";
+  content: "\EA08";
+  font-weight: bold;  
+  text-align: center;
+  width: 40rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 24rpx;  
   transform:translate(-50%, -50%) scale(1);
   -webkit-transform:translate(-50%, -50%) scale(1);
-  text-align: center;
-  display: block;
-  top: 12rpx;
-  left:10rpx;
-  transform: rotate(-45deg);
+  position: absolute;
+  top: calc(50% - 4rpx);
+  left: 50%;  
 }
 
 .form-checkbox{  
@@ -107,20 +106,20 @@ Page{
 .form-checkbox-checked::after{
   position: absolute; 
   color: #3AC7F4;
-  content: '';
-  width: 18rpx;
-  height: 8rpx;
-  border: 4rpx solid #3AC7F4;
-  border-top: transparent;
-  border-right: transparent;
+  font: normal normal normal 14px/1 "weui";
+  content: "\EA08";
+  width: 40rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 24rpx;
+  font-weight: bold;   
   transform:translate(-50%, -50%) scale(1);
   -webkit-transform:translate(-50%, -50%) scale(1);
   text-align: center;
   display: block;
   position: absolute;
-  top: 14rpx;
-  left:10rpx;
-  transform: rotate(-45deg);
+  top: 50%;
+  left: 50%;
 }
 
 radio{
@@ -139,8 +138,7 @@ radio-group .wx-radio-input{
   border: 4rpx solid #aaa !important;/* 设置边框（外圆） */
 }
 
-radio-group .wx-radio-input.wx-radio-input-checked{
-  
+radio-group .wx-radio-input.wx-radio-input-checked{  
   width: 40rpx !important;
   height: 40rpx !important;
   border-color:#3AC7F4 !important;
