@@ -1,0 +1,46 @@
+@import "/style/modal.wxss";
+page{
+  font-size: 34rpx;
+  background-color: #f3f3f3;
+}
+.title{
+  margin: 100rpx auto;
+  text-align: center;
+}
+.symptoms{
+  
+}
+.symptom{
+  width: 60%;
+  margin: 60rpx auto;
+  text-align: center;
+  height: 88rpx;
+  line-height: 88rpx;
+  border-radius: 50rpx;
+  border:2rpx solid #aaa;
+}
+.symptom-check{
+  color:#41b592;
+  border-color:#41b592;  
+  background-color: rgba(151, 229, 206, 0.1)
+}
+.btn-box{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.btn{
+  width: 76%;
+  margin: 30rpx auto;
+  background:#41b592;
+  height: 90rpx;
+  text-align: center;
+  color: #fff;
+  line-height: 90rpx;
+  border-radius: 45rpx;
+}

@@ -1,0 +1,94 @@
+<view class="personal-container">
+  <view class="personal-box">    
+    <view class="personal-info">
+      <image class="personal-head" src="/images/headimg.png"></image>
+      <view class="personal-base">
+        <view class="personal-nickname">NickName</view>
+        <view class="personal-tag">支架术后照护</view>
+      </view>
+    </view>
+    <view class="personal-wallet">
+      <view class="tc-icon tc-wallet"></view>
+      <view class="wallet">钱包</view>
+    </view>
+  </view>
+  <view class="personal-services">
+    <view class="service">
+      <view class="tc-icon tc-services"></view>
+      <view class="service-title">我的服务</view>
+    </view>
+    <view class="service">
+      <view class="tc-icon tc-classes"></view>
+      <view class="service-title">在线课程</view>
+    </view>
+    <view class="service">
+      <view class="tc-icon tc-review"></view>
+      <view class="service-title">考前复习</view>
+    </view>
+    <view class="service">
+      <view class="tc-icon tc-shop"></view>
+      <view class="service-title">商城</view>
+    </view> 
+  </view>
+</view>
+
+<view class="sign-box">
+  <view class="tc-icon tc-training"></view>
+  <view class="signs">
+    <view class="sign">
+      <view class="sign-title">北京第一期</view>
+      <view class="sign-des">五级健康照护师培训班</view>
+    </view>
+    <view class="sign">
+      <view class="sign-title">天津第一期</view>
+      <view class="sign-des">社区居家运动训练培训班</view>
+    </view>
+  </view>
+</view>
+
+<view class="grids">
+  <view class="grid">
+    <view class="tc-icon tc-muscle"></view>
+    <view class="grid-title">盆底修复</view>
+  </view> 
+  <view class="grid">
+    <view class="tc-icon tc-recovery"></view>
+    <view class="grid-title">康复辅助</view>
+  </view> 
+  <view class="grid">
+    <view class="tc-icon tc-mental"></view>
+    <view class="grid-title">心理健康</view>
+  </view> 
+  <navigator url="/pages/piss/index" class="grid">
+    <view class="tc-icon tc-piss"></view>
+    <view class="grid-title">大小便清理</view>
+  </navigator> 
+  <view class="grid">
+    <view class="tc-icon tc-nutrition"></view>
+    <view class="grid-title">智能营养</view>
+  </view> 
+  <view class="grid">
+    <view class="tc-icon tc-sports"></view>
+    <view class="grid-title">智能运动</view>
+  </view> 
+  <view class="grid">
+    <view class="tc-icon tc-diabetes"></view>
+    <view class="grid-title">糖尿病管理</view>
+  </view> 
+  <view class="grid">
+    <view class="tc-icon tc-bath"></view>
+    <view class="grid-title">洗澡机</view>
+  </view> 
+  <view class="grid">
+    <view class="tc-icon tc-gait"></view>
+    <view class="grid-title">步态分析</view>
+  </view> 
+  <view class="grid">
+    <view class="tc-icon tc-tranquility"></view>
+    <view class="grid-title">安宁疗护</view>
+  </view> 
+</view>
+<view class="footer">
+  技术支持:清华大学精准医学研究院指挥康复中心
+</view>
+

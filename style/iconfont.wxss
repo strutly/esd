@@ -1,0 +1,128 @@
+@font-face {
+  font-family: "tc-icon"; /* Project id 3118992 */
+  /* Color fonts */
+  src: 
+       url('//at.alicdn.com/t/font_3118992_sryz07qlgko.woff2?t=1643167295742') format('woff2'),
+       url('//at.alicdn.com/t/font_3118992_sryz07qlgko.woff?t=1643167295742') format('woff'),
+       url('//at.alicdn.com/t/font_3118992_sryz07qlgko.ttf?t=1643167295742') format('truetype');
+}
+
+.tc-icon {
+  font-family: "tc-icon" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.tc-xixinzhaohu:before {
+  content: "\e8be";
+}
+
+.tc-mark:before {
+  content: "\e8c6";
+}
+
+.tc-reservation:before {
+  content: "\e64b";
+}
+
+.tc-ready:before {
+  content: "\e614";
+}
+
+.tc-dabian:before {
+  content: "\e610";
+}
+
+.tc-order-of-classes:before {
+  content: "\e675";
+}
+
+.tc-body:before {
+  content: "\e7e2";
+}
+
+.tc-xiaobianqi:before {
+  content: "\e660";
+}
+
+.tc-order:before {
+  content: "\e737";
+}
+
+.tc-asserts:before {
+  content: "\e68d";
+}
+
+.tc-classes:before {
+  content: "\e602";
+}
+
+.tc-search:before {
+  content: "\e632";
+}
+
+.tc-piss:before {
+  content: "\e67d";
+}
+
+.tc-my:before {
+  content: "\e659";
+}
+
+.tc-shop:before {
+  content: "\e618";
+}
+
+.tc-sports:before {
+  content: "\e6ea";
+}
+
+.tc-services:before {
+  content: "\e8a9";
+}
+
+.tc-muscle:before {
+  content: "\e9b4";
+}
+
+.tc-recovery:before {
+  content: "\e7c6";
+}
+
+.tc-wallet:before {
+  content: "\e613";
+}
+
+.tc-training:before {
+  content: "\e600";
+}
+
+.tc-mental:before {
+  content: "\e61c";
+}
+
+.tc-bath:before {
+  content: "\e65a";
+}
+
+.tc-review:before {
+  content: "\e601";
+}
+
+.tc-nutrition:before {
+  content: "\e81d";
+}
+
+.tc-diabetes:before {
+  content: "\e620";
+}
+
+.tc-tranquility:before {
+  content: "\e61b";
+}
+
+.tc-gait:before {
+  content: "\e725";
+}

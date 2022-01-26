@@ -18,6 +18,37 @@
   z-index:1000;
 }
 
+@import "/style/iconfont.wxss";
+page{
+  background-color: #f1f1f1;
+}
+radio-group .wx-radio-input{
+  
+  width: 40rpx;
+  height: 40rpx;
+  border: 4rpx solid #aaa !important;/* 设置边框（外圆） */
+}
+
+radio-group .wx-radio-input.wx-radio-input-checked{  
+  width: 40rpx !important;
+  height: 40rpx !important;
+  border-color:#41b592 !important;
+  background:#41b592 !important;
+}
+
+radio-group .wx-radio-input.wx-radio-input-checked::before{
+  border-radius: 50%;
+  text-align: center;
+  color: #fff;
+  width: 40rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  background-color: #41b592 !important;
+  font-size: 24rpx;
+  font-weight: bolder;
+  transform:translate(-50%, -50%) scale(1);
+  -webkit-transform:translate(-50%, -50%) scale(1);
+}
 video{
   z-index:1001;
   width: 100%;  

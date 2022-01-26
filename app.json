@@ -1,12 +1,14 @@
 {
-  "pages": [    
-    
-    
+  "pages": [
+    "pages/index/home",    
+    "pages/piss/form",
+    "pages/piss/symptom",
+    "pages/piss/index",
     "pages/disability/form",
     "pages/disability/result",
     "pages/disability/detail",
-    "pages/caregiver/form" 
-    
+    "pages/piss/order",
+    "pages/caregiver/form"
   ],
   "window": {
     "backgroundTextStyle": "light",

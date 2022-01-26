@@ -1,0 +1,13 @@
+<include src="../template/modal.wxml"></include>
+<view class="title">请选择是否存在以下情况</view>
+
+
+<view class="symptoms">
+  <block wx:for="{{symptoms}}" wx:key="index">
+    <view data-index="{{index}}" bindtap="checkSymptom" class="symptom {{checked.index==index?'symptom-check':''}}">{{item}}</view>
+  </block>
+</view>
+
+<view class="btn-box">
+  <view class="btn" bindtap="submit">开始评估</view>  
+</view>

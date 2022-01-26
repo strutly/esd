@@ -1,0 +1,54 @@
+@import "/style/question.wxss";
+@import "/style/modal.wxss";
+.container{
+  display: flex;
+  align-items: center;
+  margin-top: 10vh;
+}
+.des{
+  margin: 30rpx auto;
+  width: 60%;
+}
+.form-box{
+  margin-top: 40rpx;
+  background-color: #fff;
+  padding:30rpx;
+}
+
+.form-item{
+  height: 120rpx;
+  line-height: 120rpx;
+  border-bottom: 2rpx solid #f1f1f1;
+  display: flex;
+  align-items: center;
+}
+
+.form-box .form-item:last-child{
+  border-bottom: none;
+}
+
+.form-lable{
+  margin: 0 20rpx;
+}
+.form-value{
+  flex:1;
+  text-align: right;
+}
+.prompt{
+  width: 96%;
+  position: fixed;
+  top: 0;
+  background-color: #e75e58;
+  font-size: 1rem;
+  color: #fff;
+  z-index: 99999;
+  text-align: center;
+  border-radius: 0.2rem;
+  min-height: 1.4rem;
+  line-height: 1.4rem;
+  left: 2%;
+  overflow:hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  -o-text-overflow:ellipsis;
+} 

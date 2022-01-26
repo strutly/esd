@@ -1,0 +1,129 @@
+page{
+  background-color: #f1f1f1;
+}
+.personal-container{
+  background-color: #41b592;
+  padding: 15rpx;  
+  color: #fff;
+  box-sizing: border-box;
+}
+.personal-box{
+  display: flex;
+  margin-top: 50rpx;
+  align-items: center;
+}
+
+.personal-info{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+.personal-wallet{
+  margin: 0 70rpx;
+  text-align: center;
+}
+.personal-wallet .tc-icon{  
+  font-size: 50rpx;
+}
+
+.wallet{
+  margin-top: 15rpx;
+  font-size: 25rpx;
+}
+
+.personal-base{
+  flex: 1;
+}
+
+.personal-head{
+  width: 128rpx;
+  height: 128rpx;
+  margin: 0 30rpx;
+  border-radius: 50%;
+}
+
+.personal-nickname{
+  font-size: 34rpx;
+  line-height: 50rpx;
+  color: #fff;
+}
+.personal-tag{
+  width: fit-content;
+  margin-top: 20rpx;
+  font-size: 26rpx;  
+  border-radius: 30rpx;  
+  padding: 7rpx 40rpx;
+  border:1rpx solid #fff;
+}
+/*服务区*/
+.personal-services{
+  margin: 30rpx auto;
+  display: flex;
+}
+.service{
+  flex: 1;
+  text-align: center;
+}
+.service .tc-icon{
+  font-size: 80rpx;
+}
+.service-title{
+  margin-top: 15rpx;
+  font-size: 25rpx;
+}
+
+/*培训班*/
+.sign-box{
+  background-color: #fff;
+  margin: 30rpx 20rpx;
+  border-radius: 30rpx;
+  display: flex;
+  padding: 30rpx;
+  box-sizing: border-box;
+  align-items: center;
+}
+.sign-box .tc-icon{
+  font-size: 128rpx;
+  margin-right: 30rpx;
+}
+.sign{
+  margin-top: 30rpx;
+}
+.sign-box .sign:first-child{
+  margin-top: 0;
+}
+.sign-title{
+  font-size: 34rpx;
+}
+.sign-des{
+  font-size: 28rpx;
+  color:#aaa;
+}
+.grids{
+  width: 100%;
+  margin-top: 50rpx;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.grid{
+  float: left;
+  width: 25%;
+  text-align: center;
+}
+.grid .tc-icon{
+  font-size: 80rpx;
+}
+.grid-title{
+  font-size: 25rpx;
+  margin: 30rpx auto;
+}
+.footer{
+  font-size: 25rpx;
+  color:#aaa;
+  text-align: center;
+  position: fixed;
+  bottom: 60rpx;
+  left: 0;
+  right: 0;
+}
