@@ -47,18 +47,18 @@
 </view>
 
 <view class="grids">
-  <view class="grid">
+  <navigator target="miniProgram" app-id="wx628df145a9081306" class="grid">
     <view class="tc-icon tc-muscle"></view>
     <view class="grid-title">盆底修复</view>
-  </view> 
-  <view class="grid">
+  </navigator> 
+  <navigator target="miniProgram" app-id="wx2a5d27d12ce61e35" class="grid">
     <view class="tc-icon tc-recovery"></view>
     <view class="grid-title">康复辅助</view>
-  </view> 
-  <view class="grid">
+  </navigator> 
+  <navigator url="/pages/webview/index" class="grid">
     <view class="tc-icon tc-mental"></view>
     <view class="grid-title">心理健康</view>
-  </view> 
+  </navigator> 
   <navigator url="/pages/piss/index" class="grid">
     <view class="tc-icon tc-piss"></view>
     <view class="grid-title">大小便清理</view>

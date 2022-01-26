@@ -8,7 +8,8 @@
     "pages/disability/result",
     "pages/disability/detail",
     "pages/piss/order",
-    "pages/caregiver/form"
+    "pages/caregiver/form",
+    "pages/webview/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
