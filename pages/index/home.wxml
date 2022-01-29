@@ -63,10 +63,10 @@
     <view class="tc-icon tc-piss"></view>
     <view class="grid-title">大小便清理</view>
   </navigator> 
-  <view class="grid">
+  <navigator url="/pages/nutrition/index" class="grid">
     <view class="tc-icon tc-nutrition"></view>
     <view class="grid-title">智能营养</view>
-  </view> 
+  </navigator> 
   <view class="grid">
     <view class="tc-icon tc-sports"></view>
     <view class="grid-title">智能运动</view>
@@ -75,10 +75,10 @@
     <view class="tc-icon tc-diabetes"></view>
     <view class="grid-title">糖尿病管理</view>
   </view> 
-  <view class="grid">
+  <navigator url="/pages/shower/index" class="grid">
     <view class="tc-icon tc-bath"></view>
     <view class="grid-title">洗澡机</view>
-  </view> 
+  </navigator> 
   <view class="grid">
     <view class="tc-icon tc-gait"></view>
     <view class="grid-title">步态分析</view>
@@ -89,6 +89,6 @@
   </view> 
 </view>
 <view class="footer">
-  技术支持:清华大学精准医学研究院指挥康复中心
+  技术支持:清华大学精准医学研究院智慧健康中心
 </view>
 

@@ -2,9 +2,9 @@
   font-family: "tc-icon"; /* Project id 3118992 */
   /* Color fonts */
   src: 
-       url('//at.alicdn.com/t/font_3118992_sryz07qlgko.woff2?t=1643167295742') format('woff2'),
-       url('//at.alicdn.com/t/font_3118992_sryz07qlgko.woff?t=1643167295742') format('woff'),
-       url('//at.alicdn.com/t/font_3118992_sryz07qlgko.ttf?t=1643167295742') format('truetype');
+       url('//at.alicdn.com/t/font_3118992_196gobyme0wj.woff2?t=1643432344074') format('woff2'),
+       url('//at.alicdn.com/t/font_3118992_196gobyme0wj.woff?t=1643432344074') format('woff'),
+       url('//at.alicdn.com/t/font_3118992_196gobyme0wj.ttf?t=1643432344074') format('truetype');
 }
 
 .tc-icon {
@@ -13,6 +13,18 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.tc-zhengchang:before {
+  content: "\e78a";
+}
+
+.tc-fengxian:before {
+  content: "\e7fa";
+}
+
+.tc-yanzhongyinhuan:before {
+  content: "\e62d";
 }
 
 .tc-xixinzhaohu:before {

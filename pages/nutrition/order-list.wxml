@@ -1,0 +1,16 @@
+<view class="search-box">
+  <view class="tc-icon tc-search"></view>
+  <input type="text" placeholder="患者年龄" placeholder-class="search-placeholder" bindinput="search"/>
+</view>
+
+<navigator url="/pages/nutrition/order?index={{index}}" class="item" wx:for="{{orders}}" wx:key="index">
+  <view class="item-head">
+    <view class="item-title">{{item.info.age}}</view>
+    <view class="item-value">{{sexArray[item.info.sex]}}</view>
+    
+  </view>
+  <view class="item-head">
+    <view class="item-title">{{item.info.height}}</view>
+    <view class="item-value value-time">{{item.createTime}}</view>
+  </view>  
+</navigator>

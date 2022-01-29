@@ -23,7 +23,7 @@ Page({
             lable: "偶尔失能"
           }]
         }, {
-          title: "照护对象能否自主大便",
+          title: "照护对象是否便秘",
           checks: [{
             checked: false,
             lable: "没有"
@@ -301,8 +301,19 @@ Page({
     let i = that.data.index;
     let index=e.currentTarget.dataset.index;
     let result= that.data.result||{};
-    result[i+"_"+index] = e.detail.value;
-    
+    let questions = that.data.questions;
+    let val = e.detail.value;
+    let title1 = questions[i].title;
+    let title2 = questions[i].questions[index].title;
+    let lable = questions[i].questions[index].checks[val].lable;    
+    if(!result[title1]){
+      result[title1] = {};
+    }
+    result[title1][title2] = {
+      lable:lable,
+      score:val
+    }
+        
     that.setData({
       result:result
     });
@@ -356,7 +367,7 @@ Page({
     let length = that.data.questions.length - 1;
     let data = that.data.questions[length].formData;
     if (!that.WxValidate.checkForm(data)) {
-      let error = this.WxValidate.errorList[0]
+      let error = that.WxValidate.errorList[0]
       that.prompt(error.msg)
       return false;
     }

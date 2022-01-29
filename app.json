@@ -1,6 +1,10 @@
 {
   "pages": [
-    "pages/index/home",    
+    "pages/index/home",
+    "pages/nutrition/order",
+    "pages/nutrition/index",
+    "pages/nutrition/form",
+    "pages/nutrition/result",
     "pages/piss/form",
     "pages/piss/symptom",
     "pages/piss/index",
@@ -9,7 +13,10 @@
     "pages/disability/detail",
     "pages/piss/order",
     "pages/caregiver/form",
-    "pages/webview/index"
+    "pages/piss/result",
+    "pages/webview/index",
+    "pages/shower/index",
+    "pages/nutrition/order-list"
   ],
   "window": {
     "backgroundTextStyle": "light",

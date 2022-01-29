@@ -90,8 +90,8 @@ page {
   top:60rpx;
   bottom: 60rpx;
   content: ' ';
-  width: 1rpx;
-  border-left: 1rpx solid #fff;
+  width: 2rpx;
+  border-left: 2rpx solid #fff;
 }
 .record-mid::after{
   position: absolute;
@@ -99,8 +99,8 @@ page {
   top:60rpx;
   bottom: 60rpx;
   content: ' ';
-  width: 1rpx;
-  border-left: 1rpx solid #fff;
+  width: 2rpx;
+  border-left: 2rpx solid #fff;
 }
 .record-num{
   opacity: 1;

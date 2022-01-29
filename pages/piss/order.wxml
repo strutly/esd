@@ -3,7 +3,7 @@
   <input type="text" placeholder="患者姓名" placeholder-class="search-placeholder" bindinput="search"/>
 </view>
 
-<view url="/pages/disability/order?index={{index}}" class="item" wx:for="{{orders}}" wx:key="index">
+<navigator url="/pages/piss/result?index={{index}}" class="item" wx:for="{{orders}}" wx:key="index">
   <view class="item-head">
     <view class="item-title">{{item.info.name}}</view>
     <view class="item-value">
@@ -14,4 +14,4 @@
     <view class="item-title">{{item.info.phone}}</view>
     <view class="item-value value-time">{{item.createTime}}</view>
   </view>  
-</view>
+</navigator>

@@ -1,0 +1,66 @@
+<view class="score tc-icon tc-{{icon}}"></view>
+<view class="sum">{{msg}}</view>
+
+<view class="tag">基本信息</view>
+<view class="form-data">
+  <view class="form-item">
+    <view class="item-question">
+      <view class="item-question-title">性别</view>
+      <view class="item-question-score">{{sexArray[order.info.sex]}}</view>
+    </view>
+  </view>
+  <view class="form-item">
+    <view class="item-question">
+      <view class="item-question-title">年龄</view>
+      <view class="item-question-score">{{order.info.age}}</view>
+    </view>
+  </view>
+  <view class="form-item">
+    <view class="item-question">
+      <view class="item-question-title">身高</view>
+      <view class="item-question-score">{{order.info.height}}</view>
+    </view>
+  </view>
+  <view class="form-item">
+    <view class="item-question">
+      <view class="item-question-title">体重</view>
+      <view class="item-question-score">{{order.info.weight}}</view>
+    </view>
+  </view>
+</view>
+<view class="summary">
+  <view class="summary_lable">评估得分</view>
+  <view class="summary_val">{{bmi}}</view>
+</view>
+<view class="summary">
+  <view class="summary_lable">建议每日摄入热量值</view>
+  <view class="summary_val">{{suggest}}卡</view>
+</view>
+
+<block wx:for="{{questions}}" wx:for-index="key" wx:key="index" wx:for-item="question">
+  <template is="{{question.type}}" data="{{question:question,index:key,result:order.result}}"></template>
+</block>
+
+<template name="alone">  
+  <view class="form-data">
+    <view class="form-item">
+      <view class="item-question">
+        <view class="item-question-title">{{question.title}}</view>
+        <view class="item-question-score score-{{result[index]}}">{{result[index]}}</view>
+      </view>
+      <view class="item-question-answer answer-{{result[index]}}">{{question.items[result[index+'']]}}</view>
+    </view>
+  </view>
+</template>
+<template name="gather">
+  <view class="tag">{{question.title}}</view>
+  <view class="form-data">
+    <view class="form-item" wx:for="{{question.questions}}" wx:key="index" wx:for-index="k">
+      <view class="item-question">
+        <view class="item-question-title">{{item.title}}</view>
+        <view class="item-question-score score-{{result[index+'_'+k]}}">{{result[index+'_'+k]}}</view>
+      </view>
+      <view class="item-question-answer answer-{{result[index+'_'+k]}}">{{item.items[result[index+'_'+k]]}}</view>
+    </view>
+  </view>
+</template>

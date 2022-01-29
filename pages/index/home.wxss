@@ -54,7 +54,7 @@ page{
   font-size: 26rpx;  
   border-radius: 30rpx;  
   padding: 7rpx 40rpx;
-  border:1rpx solid #fff;
+  border:2rpx solid #fff;
 }
 /*服务区*/
 .personal-services{

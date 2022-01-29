@@ -1,0 +1,15 @@
+<view class="prompt" wx:if="{{prompt}}">{{promptMsg}}</view>
+<image src="/images/logo.png" class="logo"></image>
+
+<view class="des">本系统基于**医院营养科专家知识，应用清华大学人工智能技术，帮助健康照护师快速完成智能营养方案制订。</view>
+
+<view class="btns">
+  <navigator url="/pages/nutrition/form" class="btn">
+    <view class="tc-icon tc-asserts"></view>
+    <view class="tc-text">开始评估</view>
+  </navigator>
+  <navigator url="/pages/nutrition/order-list" class="btn">
+    <view class="tc-icon tc-order"></view>
+    <view class="tc-text">我的订单</view>
+  </navigator>
+</view>

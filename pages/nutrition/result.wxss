@@ -1,0 +1,63 @@
+@import "/style/modal.wxss";
+page{
+  text-align: center;
+  background-color: #fff;
+  padding-bottom: calc(30rpx + constant(safe-area-inset-bottom));
+  padding-bottom: calc(30rpx + env(safe-area-inset-bottom));
+}
+
+.icon{
+  font-size: 150rpx;  
+  margin-top: 150rpx;
+}
+.msg{  
+  margin-top: 20rpx;
+  font-size: 34rpx;
+}
+.score,.suggest{
+  display: flex;
+  justify-content: center;  
+  align-items: center;  
+}
+
+.score{
+  margin-top: 100rpx;
+}
+.score0{
+  color:#41b592;
+}
+.score1{
+  color: #f59a23;
+}
+.score2{
+  color: #F85A6D;
+}
+.score text,.suggest text{
+  font-size: 100rpx;  
+  margin-left: 30rpx;
+}
+.score span,.suggest span{
+  color:#aaa;
+  font-size: 30rpx;
+}
+
+.btn-box{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.btn{
+  width: 76%;
+  margin: 30rpx auto;
+  background:#41b592;
+  height: 90rpx;
+  text-align: center;
+  color: #fff;
+  line-height: 90rpx;
+  border-radius: 45rpx;
+}

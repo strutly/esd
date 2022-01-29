@@ -1,0 +1,12 @@
+<view class="prompt" wx:if="{{prompt}}">{{promptMsg}}</view>
+<include src="/pages/template/video.wxml"></include>
+<image src="/images/logo.png" class="logo"></image>
+
+<view class="des">
+本产品操作简单、安全、清洁；是有助于被护理者自理，及减轻护理者的负担，帮助卧床老人进行身体清洗的多功能一体机。体洁器具有如下的功能：<view class="des-item">● 能为卧床病人在床上洗头，用洗发喷头边洗发边清洁，头发会被吸入并在喷头内部清洗；</view><view class="des-item">● 能为卧床病人在床上洗澡，用洗浴喷头一边喷淋身体，一边吸水，在床上洗澡不会弄湿床单被子。</view><view class="des-item">● 对患有褥疮的患者，可以时常进行在患疮部位清洗，消毒减轻患者的痛苦。</view><view class="des-item">● 意识清醒者或护理人员可以在床上处理便、尿和清洗，尿便两用罩易于更换，并带有线控装置。</view>
+</view>
+<view class="assess" bindtap="playVideo" data-url="http://1308944528.vod2.myqcloud.com/d7a37936vodtranscq1308944528/d3f1879e387702295253583839/v.f100010.mp4"><text>播放视频</text></view>
+
+
+
+
