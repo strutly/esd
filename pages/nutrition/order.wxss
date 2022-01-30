@@ -23,12 +23,16 @@ page{
 }
 .summary{
   display: flex;
-  font-size: 28rpx;
-  color: #f59a23;
+  font-size: 34rpx;
+  align-items: center;
   background-color: #fff;
   padding: 30rpx 25rpx;
   border-radius: 10rpx;  
   margin-top: 10rpx;
+}
+.summary span{
+  color:#aaa;
+  font-size: 28rpx;
 }
 .summary_lable{
   flex:1;
@@ -71,4 +75,14 @@ page{
 }
 .answer-1,.answer-2{
   color:#f59a23;
+}
+
+.score0{
+  color:#41b592;
+}
+.score1{
+  color: #f59a23;
+}
+.score2{
+  color: #F85A6D;
 }

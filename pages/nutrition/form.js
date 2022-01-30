@@ -3,7 +3,7 @@ import WxValidate from '../../utils/WxValidate.js';
 const app = getApp();
 Page({
   data: {
-    index: 1,
+    index: 0,
     aloneScore:0,
     gatherScore:0,
     questions: [{

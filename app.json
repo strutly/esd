@@ -1,10 +1,10 @@
 {
-  "pages": [
+  "pages": [    
     "pages/index/home",
-    "pages/nutrition/order",
     "pages/nutrition/index",
     "pages/nutrition/form",
     "pages/nutrition/result",
+    "pages/nutrition/order",   
     "pages/piss/form",
     "pages/piss/symptom",
     "pages/piss/index",

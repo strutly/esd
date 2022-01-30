@@ -144,11 +144,10 @@ Page({
     sexArray: ['未知', '男', '女'],
     symptoms: ['严重压疮', '严重痔疮', '严重疝气', '肛瘘', '严重便秘'],
   },
-
   onLoad(options) {
     that = this;
     let nutritionOrders = wx.getStorageSync('nutritionOrders');
-    let order = nutritionOrders[options.index];
+    let order = nutritionOrders[options.index||0];
     let mna = order.score;
     let result = order.result;
     

@@ -30,15 +30,16 @@
 </view>
 <view class="summary">
   <view class="summary_lable">BMI评估得分</view>
-  <view class="summary_val">{{bmi}}</view>
+  <view class="summary_val score{{level}}">{{bmi}}</view>
 </view>
 <view class="summary">
   <view class="summary_lable">MNA评估得分</view>
-  <view class="summary_val">{{order.score}}</view>
+  <view class="summary_val score{{level}}">{{order.score}}</view>
 </view>
 <view class="summary">
   <view class="summary_lable">建议每日摄入热量值</view>
-  <view class="summary_val">{{suggest}}卡</view>
+  <view class="summary_val score0">{{suggest}}</view>
+  <span>卡</span>
 </view>
 
 <block wx:for="{{questions}}" wx:for-index="key" wx:key="index" wx:for-item="question">

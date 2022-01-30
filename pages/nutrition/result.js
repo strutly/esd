@@ -7,8 +7,12 @@ Page({
     msg:"正常营养状态",
     icon:"zhengchang",
     bmi:22,
-    level: 0,
-    suggest: 1600
+    level: 2,
+    suggest: 1600,
+    
+    
+    mna:22,
+      
   },
   onLoad(options) {
     that = this;

@@ -12,16 +12,16 @@ page{
 }
 .msg{  
   margin-top: 20rpx;
+  margin-bottom: 80rpx;
   font-size: 34rpx;
 }
 .score,.suggest{
   display: flex;
-  justify-content: center;  
   align-items: center;  
 }
 
 .score{
-  margin-top: 100rpx;
+  margin-top: 25rpx;
 }
 .score0{
   color:#41b592;
@@ -31,6 +31,17 @@ page{
 }
 .score2{
   color: #F85A6D;
+}
+
+.score view{
+  flex:1;
+  text-align: right;
+  padding-right: 20rpx;
+}
+.score view:last-child{
+  text-align: left;
+  padding-left:20rpx;
+  font-size: 100rpx;  
 }
 .score text,.suggest text{
   font-size: 100rpx;  
