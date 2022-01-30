@@ -49,6 +49,7 @@ Page({
       btn:btn,
       bmi: bmi,
       msg: msg,
+      mna:mna,
       icon: icon,
       level: level,
       suggest: suggest

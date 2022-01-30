@@ -1,8 +1,9 @@
 <include src="/pages/template/modal.wxml"></include>
 <view class="icon tc-icon tc-{{icon}}"></view>
 <view class="msg">{{msg}}</view>
-<view class="score">您的评估得分<text class="score{{level}}">{{bmi}}</text></view>
+<view class="score">您的评估BMI得分<text class="score{{level}}">{{bmi}}</text></view>
+<view class="score">您的评估MNA得分<text class="score{{level}}">{{mna}}</text></view>
 <view class="suggest">建议每日摄入热量值<text class="score0">{{suggest}}</text><span>卡</span></view>
 <view class="btn-box">
-  <view class="btn" bindtap="submit">预约试用</view>  
+  <view class="btn" bindtap="submit" wx:if="{{btn}}">预约试用</view>  
 </view>

@@ -3,7 +3,7 @@ import WxValidate from '../../utils/WxValidate.js';
 const app = getApp();
 Page({
   data: {
-    index: 0,
+    index: 1,
     aloneScore:0,
     gatherScore:0,
     questions: [{
@@ -419,7 +419,7 @@ Page({
           let msg = res[0].dataset.title;
           that.prompt("请选择["+msg+"]的答案!");
         });
-        flag = true;
+        flag = false;
         break;
       }
     }

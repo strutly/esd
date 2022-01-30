@@ -150,13 +150,28 @@ Page({
     let nutritionOrders = wx.getStorageSync('nutritionOrders');
     let order = nutritionOrders[options.index];
     let mna = order.score;
+    let result = order.result;
+    
+    let gatherResult = [];
+    Object.keys(result).forEach(key=>{
+      
+      if(key.includes("8")){
+        gatherResult.push(result[key]);
+      }
+    });
+    let length = gatherResult.filter(item=>{
+      return item>0;
+    }).length;
+    let sizeScore = {0:0,1:0,2:0.5,3:1};
+    result[8] = sizeScore[length];
+
     let info = order.info;
     let level = 0;
     let btn = true;
     let msg = "";
     let icon = "zhengchang"   
-    let bmi = parseInt((info.weight * 10000) / (info.height * info.height));
-    let suggest = parseInt(info.weight * 10 + 6.25 * info.height - 5 * info.age + (info.sex == 1 ? 5 : -161));
+    let bmi = parseInt((10000 * info.weight) / (info.height * info.height));
+    let suggest = parseInt(10 * info.weight + 6.25 * info.height - 5 * info.age + (info.sex == 1 ? 5 : -161));
     if (bmi >= 28) {
       msg = "营养过剩";
       icon = "yanzhongyinhuan";
@@ -183,7 +198,7 @@ Page({
     }
     that.setData({
       order: order,
-      btn:btn,
+      btn: btn,
       bmi: bmi,
       msg: msg,
       icon: icon,

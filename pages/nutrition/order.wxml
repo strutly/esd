@@ -29,8 +29,12 @@
   </view>
 </view>
 <view class="summary">
-  <view class="summary_lable">评估得分</view>
+  <view class="summary_lable">BMI评估得分</view>
   <view class="summary_val">{{bmi}}</view>
+</view>
+<view class="summary">
+  <view class="summary_lable">MNA评估得分</view>
+  <view class="summary_val">{{order.score}}</view>
 </view>
 <view class="summary">
   <view class="summary_lable">建议每日摄入热量值</view>
@@ -53,12 +57,15 @@
   </view>
 </template>
 <template name="gather">
-  <view class="tag">{{question.title}}</view>
+  <view class="summary">
+    <view class="summary_lable">{{question.title}}</view>
+    <view class="summary_val">{{result[index]}}</view>
+  </view>
+  
   <view class="form-data">
     <view class="form-item" wx:for="{{question.questions}}" wx:key="index" wx:for-index="k">
       <view class="item-question">
-        <view class="item-question-title">{{item.title}}</view>
-        <view class="item-question-score score-{{result[index+'_'+k]}}">{{result[index+'_'+k]}}</view>
+        <view class="item-question-title">{{item.title}}</view>        
       </view>
       <view class="item-question-answer answer-{{result[index+'_'+k]}}">{{item.items[result[index+'_'+k]]}}</view>
     </view>
