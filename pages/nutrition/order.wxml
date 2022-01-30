@@ -36,11 +36,14 @@
   <view class="summary_lable">MNA评估得分</view>
   <view class="summary_val score{{level}}">{{order.score}}</view>
 </view>
+<!--
 <view class="summary">
   <view class="summary_lable">建议每日摄入热量值</view>
   <view class="summary_val score0">{{suggest}}</view>
   <span>卡</span>
 </view>
+-->
+
 
 <block wx:for="{{questions}}" wx:for-index="key" wx:key="index" wx:for-item="question">
   <template is="{{question.type}}" data="{{question:question,index:key,result:order.result}}"></template>
@@ -60,7 +63,7 @@
 <template name="gather">
   <view class="summary">
     <view class="summary_lable">{{question.title}}</view>
-    <view class="summary_val">{{result[index]}}</view>
+    <view class="summary_val score-0">{{result[index]}}</view>
   </view>
   
   <view class="form-data">

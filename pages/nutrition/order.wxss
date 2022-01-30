@@ -23,7 +23,7 @@ page{
 }
 .summary{
   display: flex;
-  font-size: 34rpx;
+  
   align-items: center;
   background-color: #fff;
   padding: 30rpx 25rpx;
@@ -52,29 +52,33 @@ page{
 
 .item-question{
   display: flex;
-  font-size: 28rpx;
+  
 }
 .item-question-title{
   flex:1;
 }
 .item-question-answer{
   margin-top: 30rpx;
-  font-size: 28rpx;
+  
 }
 .item-question-score{
   margin-left: 20rpx;
+  color:#41b592;
 }
 .score-0{
-  color:#aaa;
+  color:#41b592;
 }
+
+
+
 .score-1,.score-2{
-  color:#f59a23;
+  color:#41b592;
 }
 .answer-0{
   color:#41b592;
 }
 .answer-1,.answer-2{
-  color:#f59a23;
+  color:#41b592;
 }
 
 .score0{

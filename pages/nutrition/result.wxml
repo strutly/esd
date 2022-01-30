@@ -11,10 +11,14 @@
   <view>您的MNA得分</view>
   <view class="val score{{level}}">{{mna}}</view>
 </view>
+<!--
 <view class="score">
   <view>建议每日摄入热量值</view>
   <view class="val score0">{{suggest}}<span>卡</span></view>
 </view>
+
+-->
+
 <view class="btn-box">
   <view class="btn" bindtap="submit" wx:if="{{btn}}">预约试用</view>  
 </view>
