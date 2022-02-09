@@ -1,10 +1,10 @@
 {
-  "pages": [    
+  "pages": [
     "pages/index/home",
     "pages/nutrition/index",
     "pages/nutrition/form",
     "pages/nutrition/result",
-    "pages/nutrition/order",   
+    "pages/nutrition/order",
     "pages/piss/form",
     "pages/piss/symptom",
     "pages/piss/index",
@@ -16,7 +16,9 @@
     "pages/piss/result",
     "pages/webview/index",
     "pages/shower/index",
-    "pages/nutrition/order-list"
+    "pages/nutrition/order-list",
+    "pages/course/collection",
+    "pages/course/list"
   ],
   "window": {
     "backgroundTextStyle": "light",

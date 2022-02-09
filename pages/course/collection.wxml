@@ -1,0 +1,18 @@
+<include src="/pages/template/video.wxml"></include>
+<view class="list">
+  <view class="media-box" bindtap="playVideo" data-url="https://1308944528.vod2.myqcloud.com/00b98b8evodcq1308944528/ad74fe15387702295819600670/QTukJSg1H7cA.mp4">
+    <image src="https://6870-hpmp-0gc3hyp495d12e28-1301665033.tcb.qcloud.la/huiyi.png" class="media-box-thumb"/>
+    <view class="media-box-td">
+      <view class="media-box-title">回忆疗法</view>
+      <view class="media-box-des">阿尔茨海默症早期患者进行相应的策略方法</view>
+    </view>
+  </view>
+
+  <view class="media-box" bindtap="playVideo" data-url="https://1308944528.vod2.myqcloud.com/00b98b8evodcq1308944528/add23ee2387702295819655862/QMaxEEnIsoUA.mp4">
+    <image src="https://6870-hpmp-0gc3hyp495d12e28-1301665033.tcb.qcloud.la/music.png" class="media-box-thumb"/>
+    <view class="media-box-td">
+      <view class="media-box-title">音乐和艺术疗法</view>
+      <view class="media-box-des">精神疾病或心身疾病的复健</view>
+    </view>
+  </view>
+</view>

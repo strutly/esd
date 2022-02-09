@@ -1,0 +1,36 @@
+.list{
+  padding: 25rpx;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+
+.media-box{
+  display: flex;
+  align-items: center;
+  margin-top: 25rpx;
+}
+
+.media-box-thumb{
+  width: 320rpx;
+  height: 180rpx;
+  border-radius: 20rpx;
+}
+.media-box-td{
+  flex: 1;
+  margin: 0 25rpx;
+}
+.media-box-title{
+  font-size: 28rpx;
+}
+.media-box-des{
+  font-size: 25rpx;
+  color:#aaa;
+  margin-top: 25rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  word-wrap: break-word;
+}
+
