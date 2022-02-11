@@ -1,10 +1,6 @@
 @import "/style/question.wxss";
 @import "/style/modal.wxss";
-.container{
-  display: flex;
-  align-items: center;
-  margin-top: 10vh;
-}
+
 .des{
   margin: 30rpx auto;
   width: 60%;

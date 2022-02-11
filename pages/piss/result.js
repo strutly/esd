@@ -2,15 +2,22 @@ var that;
 Page({
 
   data: {
-
+    symptoms:['失能','未失能'],
+    sexArray:['未知','男','女']
   },
 
   onLoad(options) {
     that = this;
-    let orders = wx.getStorageSync('orders');
-    let result = orders[options.index].result;
+    let orders = wx.getStorageSync('pissOrder')||[];
+    let order = orders[options.index];
     that.setData({
-      questions:result
+      order:order,
+      index:options.index
+    })
+  },
+  server(){
+    wx.navigateTo({
+      url: '/pages/piss/serve',
     })
   }
 })

@@ -1,0 +1,48 @@
+<view class="prompt" wx:if="{{prompt}}">{{promptMsg}}</view>
+<include src="/pages/template/modal.wxml"></include>
+<template name="question">
+  <view class="logo tc-icon tc-{{logo}}"></view>
+  <view class="title">{{title}}</view>
+  <view class="questions">
+    <view class="question" wx:for="{{questions}}" wx:key="index">
+      <view class="question-title">{{item.title}}</view>
+      <radio-group bindchange="radioChange" data-index="{{index}}">
+        <label class="question-check" wx:for="{{item.checks}}" wx:for-index="k" wx:key="k">        
+          <radio class="question-radio" value="{{k}}" checked="{{item.checked}}"/>
+          <view class="question-lable">{{item.lable}}</view>
+        </label>
+      </radio-group>    
+    </view>
+  </view>
+  <view class="btn-box">
+    <view class="btn" bindtap="{{fun}}">{{btn}}</view>  
+  </view>
+</template>
+<template name="end">
+  <view class="container">
+    <view class="logo tc-icon tc-{{logo}}"></view>
+    <view class="des">{{msg}}</view>
+  </view>
+  <view class="form-box">
+    <view class="form-item" >
+      <view class="form-lable">姓名</view>
+      <input  class="form-value" placeholder="请输入照护对象的姓名" data-name="name" type="text" bindblur="inputChange"/>
+    </view>
+    <view class="form-item" >
+      <view class="form-lable">电话</view>
+      <input class="form-value" placeholder="请输入照护对象的电话" data-name="phone" type="number" bindblur="inputChange"/>
+    </view>
+    <view class="form-item" >
+      <view class="form-lable">性别</view>      
+      <picker mode="selector" range="{{sexArray}}" class="form-value" bindchange="pickerChange">{{sexArray[formData.sex]}}</picker>
+    </view>
+    <view class="form-item" >
+      <view class="form-lable">年龄</view>
+      <input class="form-value" placeholder="请输入照护对象的年龄" data-name="age" type="number" bindblur="inputChange"/>
+    </view>
+  </view>  
+</template>
+<view class="container safe-bottom">
+  <template is="question" data="{{...questions[index]}}"></template>  
+</view>
+

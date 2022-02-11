@@ -7,7 +7,7 @@
   <view class="item-head">
     <view class="item-title">{{item.info.name}}</view>
     <view class="item-value">
-      <view class="item-value">{{symptoms[item.type]}}</view>
+      <view class="item-value">{{symptoms[item.classify]}}</view>
     </view>
   </view>
   <view class="item-head">

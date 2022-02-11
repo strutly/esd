@@ -1,0 +1,58 @@
+@import "/style/question.wxss";
+@import "/style/modal.wxss";
+.des {
+  margin: 30rpx auto;
+  text-align: center;
+  width: 50%;
+}
+.symptoms{
+  width: 100%;
+}
+.symptom {
+  width: 60%;
+  margin: 60rpx auto;
+  text-align: center;
+  height: 88rpx;
+  line-height: 88rpx;
+  border-radius: 50rpx;
+  border: 2rpx solid #aaa;
+}
+
+.symptom-check {
+  color: #41b592;
+  border-color: #41b592;
+  background-color: rgba(151, 229, 206, 0.1);
+}
+
+.options {
+  background-color: #fff;
+  font-size: 28rpx;
+  margin-top: 30rpx;
+  width: 100vw;
+}
+
+.option {
+  height: 120rpx;
+  border-bottom: 2rpx solid #eee;
+  padding: 0 30rpx;
+  display: flex;
+  align-items: center;  
+}
+.option-des{
+  font-size: 25rpx;
+  color:#aaa;
+}
+.option-check{
+  background-color: rgba(151, 229, 206, 0.1);
+  position: relative;
+}
+.option-check::after{
+  color: #41b592;
+  font: normal normal normal 14px/1 "weui";
+  content: "\EA08";
+  font-size: 36rpx;
+  font-weight: bold;
+  position: absolute;
+  right: 30rpx;
+  top:42rpx;  
+}

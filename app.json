@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/home",
+    "pages/piss/form2",
     "pages/nutrition/index",
     "pages/nutrition/form",
     "pages/nutrition/result",
@@ -18,7 +19,8 @@
     "pages/shower/index",
     "pages/nutrition/order-list",
     "pages/course/collection",
-    "pages/course/list"
+    "pages/course/list",
+    "pages/piss/serve"
   ],
   "window": {
     "backgroundTextStyle": "light",

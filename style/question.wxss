@@ -1,41 +1,72 @@
-page{
-  padding-bottom: calc(150rpx + constant(safe-area-inset-bottom));
-  padding-bottom: calc(150rpx + env(safe-area-inset-bottom));
-}
-.logo{
+.logo {
   font-size: 120rpx;
   margin: 60rpx auto 0;
   text-align: center;
 }
-.title{
+
+.title {
   text-align: center;
   margin: 30rpx auto;
 }
-
-.question{
+.questions{
+  width: 100%;
+}
+.question {
   background-color: #fff;
   margin: 25rpx;
   border-radius: 15rpx;
   padding: 30rpx;
   box-sizing: border-box;
 }
-.question-title{
+
+.question-title {
   margin-bottom: 10rpx;
 }
-.question-check{
+
+.question-check {
   display: flex;
   align-items: center;
   margin-top: 30rpx;
 }
-.question-radio{
+
+.question-radio {
   margin-right: 10rpx;
 }
-.question-lable{
-  flex:1;
+
+.question-lable {
+  flex: 1;
 }
 
+.form-box {
+  margin-top: 40rpx;
+  background-color: #fff;
+  padding: 30rpx;
+  width: 100%;
+  box-sizing: border-box;
+}
 
-.btn-box{
+.form-item {
+  height: 120rpx;
+  line-height: 120rpx;
+  border-bottom: 2rpx solid #f1f1f1;
+  display: flex;
+  align-items: center;
+}
+
+.form-box .form-item:last-child {
+  border-bottom: none;
+}
+
+.form-lable {
+  margin: 0 20rpx;
+}
+
+.form-value {
+  flex: 1;
+  text-align: right;
+}
+
+.btn-box {
   position: fixed;
   bottom: 0;
   left: 0;
@@ -45,10 +76,10 @@ page{
   padding-bottom: env(safe-area-inset-bottom);
 }
 
-.btn{
+.btn {
   width: 76%;
   margin: 30rpx auto;
-  background:#41b592;
+  background: #41b592;
   height: 90rpx;
   text-align: center;
   color: #fff;

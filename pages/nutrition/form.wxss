@@ -1,22 +1,25 @@
 @import "/style/question.wxss";
 @import "/style/modal.wxss";
-.container{
-  display: flex;
-  align-items: center;
+
+.top10{
   margin-top: 10vh;
 }
-.des{
+
+.des {
   margin: 30rpx auto;
   text-align: center;
   width: 60%;
 }
-.form-box{
+
+.form-box {
   margin-top: 40rpx;
   background-color: #fff;
-  padding:30rpx;
+  padding: 30rpx;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.form-item{
+.form-item {
   height: 120rpx;
   line-height: 120rpx;
   border-bottom: 2rpx solid #f1f1f1;
@@ -24,18 +27,20 @@
   align-items: center;
 }
 
-.form-box .form-item:last-child{
+.form-box .form-item:last-child {
   border-bottom: none;
 }
 
-.form-lable{
-  margin-right:20rpx;
+.form-lable {
+  margin-right: 20rpx;
 }
-.form-value{
-  flex:1;
+
+.form-value {
+  flex: 1;
   text-align: right;
 }
-.prompt{
+
+.prompt {
   width: 96%;
   position: fixed;
   top: 0;
@@ -48,8 +53,8 @@
   min-height: 1.4rem;
   line-height: 1.4rem;
   left: 2%;
-  overflow:hidden;
+  overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  -o-text-overflow:ellipsis;
-} 
+  -o-text-overflow: ellipsis;
+}

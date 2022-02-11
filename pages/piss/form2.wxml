@@ -1,0 +1,67 @@
+<view class="prompt" wx:if="{{prompt}}">{{promptMsg}}</view>
+<include src="/pages/template/modal.wxml"></include>
+<template name="type">
+  <view class="container container100">
+    <view class="logo tc-icon tc-{{logo}}"></view>
+    <view class="des">{{msg}}</view>
+    <view class="symptoms">
+    <block wx:for="{{symptoms}}" wx:key="index">
+      <view data-index="{{index}}" bindtap="checkType" class="symptom">{{item}}</view>
+    </block>
+  </view>
+  </view>  
+</template>
+
+<template name="question">
+  <view class="container safe-bottom">
+    <view class="logo tc-icon tc-{{logo}}"></view>
+    <view class="des">{{msg}}</view>
+  
+  <view class="options">
+    <view class="option {{item.checked?'option-check':''}}" wx:for="{{questions}}" wx:key="index" bindtap="{{item.fun}}" data-index="{{index}}">
+      <view class="option-title">{{item.title}}<view class="option-des" wx:if="{{item.des}}">{{item.des}}</view></view>      
+    </view>    
+  </view>
+  <view class="btn-box">
+    <view class="btn" bindtap="end">评估完成</view>  
+  </view>
+</view>
+</template>
+
+<template name="info">
+  <form bindsubmit="submitForm">
+    <input hidden name="sex" value="{{formData.sex}}" />
+    <view class="container top10">
+      <view class="logo tc-icon tc-{{logo}}"></view>
+      <view class="des" style="text-align: left;">{{msg}}</view>
+      <view class="form-box">
+        <view class="form-item">
+          <view class="form-lable">姓名</view>
+          <input class="form-value" placeholder="请输入照护对象的姓名" name="name" type="text" />
+        </view>
+        <view class="form-item">
+          <view class="form-lable">电话</view>
+          <input class="form-value" placeholder="请输入照护对象的电话" name="phone" type="number" />
+        </view>
+        <view class="form-item">
+          <view class="form-lable">年龄</view>
+          <input class="form-value" placeholder="请输入照护对象的年龄" name="age" type="text" />
+        </view>
+        <view class="form-item">
+          <view class="form-lable">性别</view>
+          <picker mode="selector" range="{{sexArray}}" class="form-value" bindchange="pickerChange">{{sexArray[formData.sex]}}</picker>
+        </view>
+        
+      </view>
+      <view class="btn-box">
+        <button class="btn" formType="submit">预约试用</button>
+      </view>
+    </view>
+  </form>
+</template>
+
+
+<template is="{{type}}" data="{{...questions[index]}}"></template>
+
+
+

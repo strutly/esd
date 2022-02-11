@@ -1,21 +1,32 @@
-<view class="score">3</view>
-<view class="sum">总分</view>
 
-<view class="tag">症状</view>
-
-<view class="summary">
-  <view class="summary_lable">严重便秘</view>
-  <view class="summary_val">2</view>
-</view>
-<block wx:for="{{questions}}" wx:for-index="key" wx:key="index" wx:for-item="question">
-  <view class="tag">{{key}}</view>
-  <view class="form-data">
-    <view class="form-item" wx:for="{{question}}" wx:key="k" wx:for-index="k" wx:for-item="check">
-      <view class="item-question">
-        <view class="item-question-title">{{k}}</view>
-        <view class="item-question-score score-{{check.score}}">{{check.score}}</view>
-      </view>
-      <view class="item-question-answer answer-{{check.score}}">{{check.lable}}</view>
-    </view>
+<view class="tag">个人信息</view>
+<view class="form-box">
+  <view class="form-item">
+    <view class="form-lable">姓名</view>
+    <view class="form-value">{{order.info.name}}</view>    
   </view>
-</block>
+  <view class="form-item">
+    <view class="form-lable">电话</view>
+    <view class="form-value">{{order.info.phone}}</view>
+  </view>
+  <view class="form-item">
+    <view class="form-lable">年龄</view>
+    <view class="form-value">{{order.info.age}}</view>    
+  </view>
+  <view class="form-item">
+    <view class="form-lable">性别</view>
+    <view class="form-value">{{sexArray[order.info.sex]}}</view>
+  </view>  
+</view>
+
+
+<view class="tag">健康数据<span class="classify">{{symptoms[order.classify]}}</span></view>
+<view class="form-box">
+  <view class="form-item" wx:for="{{order.result}}" wx:key="index">
+    <view class="form-lable">{{item.title}}</view>     
+  </view>
+</view>
+
+<view class="btn-box" wx:if="{{!order.serve}}">
+  <navigator url="/pages/piss/serve?orderIndex={{index}}" class="btn" bindtap="server">服务</navigator>
+</view>
