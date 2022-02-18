@@ -5,4 +5,17 @@
   margin: 30rpx auto;
   width: 60%;
 }
+.btn-box{
+  display: flex;
+}
+.f1{
+  flex:1;
+  background-color: #DADF00;
+  margin: 30rpx;
+}
+.f2{
+  flex:2;
+  margin: 30rpx;
+  margin-left: 0;
+}
 

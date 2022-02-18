@@ -210,16 +210,18 @@ Page({
       index:index+1
     })
   },
-  save(){
-
+  care(){
+    let index = that.data.orderIndex;
+    wx.navigateTo({
+      url: '/pages/piss/care?orderIndex='+index,
+    })
   },
   modalBtn(){
     wx.reLaunch({
-      url: '/pages/index/home',
+      url: '/pages/piss/order',
     });
   },
-  order(){
-    console.log(1)
+  order(){    
     wx.reLaunch({
       url: '/pages/piss/order',
     })

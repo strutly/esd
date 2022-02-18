@@ -1,0 +1,8 @@
+<view class="container safe-bottom">
+  <block wx:for="{{order.cares}}">
+    <view class="tag">{{item.symptom}}</view>
+    <view class="cares">
+      <view class="care" wx:for="{{item.matters}}" wx:for-item="matter" wx:key="i" wx:for-index="i">{{matter}}</view>
+    </view>
+  </block>
+</view>

@@ -1,9 +1,8 @@
-
 <view class="tag">个人信息</view>
 <view class="form-box">
   <view class="form-item">
     <view class="form-lable">姓名</view>
-    <view class="form-value">{{order.info.name}}</view>    
+    <view class="form-value">{{order.info.name}}</view>
   </view>
   <view class="form-item">
     <view class="form-lable">电话</view>
@@ -11,22 +10,35 @@
   </view>
   <view class="form-item">
     <view class="form-lable">年龄</view>
-    <view class="form-value">{{order.info.age}}</view>    
+    <view class="form-value">{{order.info.age}}</view>
   </view>
   <view class="form-item">
     <view class="form-lable">性别</view>
     <view class="form-value">{{sexArray[order.info.sex]}}</view>
-  </view>  
+  </view>
 </view>
-
 
 <view class="tag">健康数据<span class="classify">{{symptoms[order.classify]}}</span></view>
 <view class="form-box">
   <view class="form-item" wx:for="{{order.result}}" wx:key="index">
-    <view class="form-lable">{{item.title}}</view>     
+    <view class="form-lable">{{item.title}}</view>
   </view>
 </view>
+<block wx:if="{{order.serve}}">
+  <view class="tag">服务数据</view>
+  <view class="form-box">
+    <block wx:for="{{order.serve}}" wx:for-item="serve">
+      <view class="serve-data">
+        <view class="serve-item" wx:for="{{serve}}" wx:for-index="k">
+          <view class="serve-question">{{k}}</view>
+          <view class="serve-answer">{{item.lable}}</view>
+        </view>
+      </view>
+    </block>
+  </view>
+</block>
 
-<view class="btn-box" wx:if="{{!order.serve}}">
-  <navigator url="/pages/piss/serve?orderIndex={{index}}" class="btn" bindtap="server">服务</navigator>
+<view class="btn-box">
+  <navigator url="/pages/piss/care?orderIndex={{index}}" class="btn f1">照护事项</navigator>
+  <navigator url="/pages/piss/serve?orderIndex={{index}}" class="btn f2" wx:if="{{!order.serve}}">服务</navigator>
 </view>

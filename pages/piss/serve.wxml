@@ -14,9 +14,14 @@
       </radio-group>    
     </view>
   </view>
+  
+
   <view class="btn-box">
-    <view class="btn" bindtap="{{fun}}">{{btn}}</view>  
+    <view bindtap="care" class="btn f1">照护事项</view>
+    <view class="btn f2" bindtap="{{fun}}">{{btn}}</view>
   </view>
+
+
 </template>
 <template name="end">
   <view class="container">

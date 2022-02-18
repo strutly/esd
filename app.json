@@ -1,6 +1,7 @@
 {
   "pages": [
-    "pages/index/home",
+    
+    "pages/index/home","pages/piss/care",
     "pages/piss/form2",
     "pages/nutrition/index",
     "pages/nutrition/form",

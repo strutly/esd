@@ -16,6 +16,9 @@ page{
 .item-title{
   flex:1;  
 }
+.item-value{
+  color: #41b592;
+}
 .value-time{
   color: #7f7f7f;
   font-size: 28rpx;
