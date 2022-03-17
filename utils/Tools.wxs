@@ -2,6 +2,40 @@ var indexOf = function(arr,val){
   if(!arr||!val) return false;
   return arr.indexOf(val+"")>-1;
 }
+var ifShow = function(ifneed,result,show){
+  if(!ifneed){
+    return true;
+  }
+  if(show){    
+    if(result[""+show[0]]!=null && result[""+show[0]].value == show[1]){
+      return true;
+    }
+  }
+  return false;
+};
+var checked = function(result,id,val){
+  var flag = false;
+  if(result[""+id]!=null && result[""+id].value!=""){
+    var vals = result[""+id].options;
+    vals.forEach(function(v){
+      if(v.value+''==val+''){
+        flag = true;
+        return false;
+      }
+    })
+  }
+  return flag;
+};
+var val = function(result,id){
+  if(result[""+id]!=null && result[""+id].value!=""){
+    var vals = result[""+id].value+'';
+    return vals.split(',')[0];
+  }
+  return "";
+};
 module.exports = {
-  indexOf:indexOf
+  indexOf:indexOf,
+  ifShow:ifShow,
+  checked:checked,
+  val:val
 }

@@ -11,8 +11,21 @@
 <view class="modal" wx:if="{{successModal}}">
   <view class="modal-content-center">
     <view class="modal-icon tc-icon tc-reservation"></view>
-    <text class="modal-msg" bindtap="order">{{modalMsg}}<text class="modal-text">我的订单</text></text>
-    
+    <text class="modal-msg" bindtap="order">{{modalMsg}}<text class="modal-text">我的订单</text></text>    
   </view>
   <view class="modal-btn" bindtap="modalBtn">{{modalBtn}}</view>
-</view> 
+</view>
+
+
+<view class="mask" wx:if="{{authModal}}"></view>
+<view class="modal" wx:if="{{authModal}}">
+  <view class="modal-content">
+    <view class="modal-icon tc-icon tc-mark"></view>
+    <view class="modal-msg">您未认证或登陆,请认证后再进行</view>
+  </view>
+  <view class="modal-btns">
+    <button class="modal-btn" bindtap="authModal">取消</button>
+    <button class="modal-btn" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">授权认证</button>
+  </view>
+  
+</view>

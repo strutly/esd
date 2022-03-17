@@ -33,10 +33,13 @@
 .modal-msg{
   flex:1;
 }
-
+.modal-btns{
+  display: flex;
+}
 .modal-btn{
-  width: 80%;
-  margin: 30rpx auto 30rpx;
+  flex:1;
+  max-width: 80%;
+  margin: 30rpx;
   text-align: center;
   height: 80rpx;
   line-height: 80rpx;
