@@ -16,6 +16,6 @@
   </view>  
 </navigator>
 
-<view class="btn-box">
-  <button class="btn" formType="submit">添加客户</button>
-</view>
+<navigator url="/pages/apoplexy/customer/form" class="btn-box" wx:if="{{show}}">
+  <button class="btn">添加客户</button>
+</navigator>

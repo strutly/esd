@@ -6,6 +6,7 @@ Page({
     customers:[]
   },
   onLoad(options) {
+    console.log(options)
     that = this;
     that.setData({
       show:options.show||false
