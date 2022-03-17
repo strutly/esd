@@ -1,7 +1,7 @@
 <view class="prompt" wx:if="{{prompt}}">{{promptMsg}}</view>
 <include src="/pages/template/modal.wxml"></include>
-<wxs src="../../../utils/Tools.wxs" module="Tools" />
-<progress class="q-speed" percent="{{((pageNo+1)/questionList.length)*100}}" activeColor="#7d96e0"></progress>
+<wxs src="/utils/Tools.wxs" module="Tools" />
+<progress class="q-speed" percent="{{((pageNo+1)/questionList.length)*100}}" activeColor="#41B592"></progress>
 <!--单选题模板-->
 <template name="radio">
   <radio-group name="{{question.groupSort}}{{question.sort}}" class="q-radio-group" bindchange="radionChange" data-id="{{question.id}}" data-groupSort="{{question.groupSort}}" data-showTitle="{{question.showTitle}}" data-groupName="{{question.groupName}}" data-title="{{question.title}}" data-sort="{{question.sort}}">

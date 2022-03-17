@@ -1,5 +1,5 @@
 var that;
-import Api from "../../../config/api";
+import Api from "../../config/api";
 Page({
   data: {
     scales: [],

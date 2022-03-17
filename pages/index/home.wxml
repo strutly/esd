@@ -23,7 +23,7 @@
       <view class="tc-icon tc-classes"></view>
       <view class="service-title">在线课程</view>
     </navigator>
-    <view data-url="/pages/apoplexy/customer/list?show=true" bindtap="toHref" class="service">
+    <view data-url="/pages/customer/list" bindtap="toHref" class="service">
       <view class="tc-icon tc-kehuguanli"></view>
       <view class="service-title">客户管理</view>
     </view>
@@ -89,7 +89,7 @@
     <view class="tc-icon tc-tranquility"></view>
     <view class="grid-title">安宁疗护</view>
   </view>
-  <view data-url="/pages/apoplexy/customer/list?show=false" bindtap="toHref" class="grid">
+  <view data-url="/pages/customer/page?type=apoplexy" bindtap="toHref" class="grid">
     <view class="tc-icon tc-zhihuidanao-04"></view>
     <view class="grid-title">脑卒中院后</view>
   </view>  

@@ -1,17 +1,19 @@
 var that;
-import WxValidate from '../../../utils/WxValidate';
-const api = require('../../../config/api');
+const api = require('../../config/api');
 Page({
+
   data: {
-    customers:[]
+    types:{
+      apoplexy:"/pages/scale/index",
+      piss:"/pages/piss/form2"
+    }
   },
+
   onLoad(options) {
-    console.log(options)
     that = this;
     that.setData({
-      show:options.show||false
+      type:options.type||'apoplexy'
     })
-
     that.getList("",1);
   },
   async getList(name,pageNo){
@@ -28,7 +30,7 @@ Page({
   search(e){
     console.log(e);
     let val = e.detail.value;
-    var reg = /[^\u4e00-\u9fa5]/;
+    let reg = /^[a-zA-Z]+$/;
     if (reg.test(val)){
       return;
     }
@@ -46,6 +48,4 @@ Page({
       that.getList(name,pageNo);
     }    
   }
-
-
 })

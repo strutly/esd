@@ -15,7 +15,8 @@ var ifShow = function(ifneed,result,show){
 };
 var checked = function(result,id,val){
   var flag = false;
-  if(result[""+id]!=null && result[""+id].value!=""){
+  
+  if(result[""+id]!=null && result[""+id].options){
     var vals = result[""+id].options;
     vals.forEach(function(v){
       if(v.value+''==val+''){
@@ -27,9 +28,9 @@ var checked = function(result,id,val){
   return flag;
 };
 var val = function(result,id){
-  if(result[""+id]!=null && result[""+id].value!=""){
-    var vals = result[""+id].value+'';
-    return vals.split(',')[0];
+  if(result[""+id]!=null && result[""+id].options){
+    var vals = result[""+id].options;
+    return vals[0].des;
   }
   return "";
 };

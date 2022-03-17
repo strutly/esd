@@ -1,8 +1,9 @@
 {
   "pages": [
-    "pages/index/home","pages/apoplexy/scale/index",
-    "pages/apoplexy/customer/form",
-    "pages/apoplexy/scale/form",
+    "pages/index/home",
+    "pages/scale/index",
+    "pages/customer/form",
+    "pages/scale/form",
     "pages/piss/care",
     "pages/piss/form2",
     "pages/nutrition/index",
@@ -24,8 +25,8 @@
     "pages/course/collection",
     "pages/course/list",
     "pages/piss/serve",
-    "pages/apoplexy/customer/list"
-    
+    "pages/customer/list",
+    "pages/customer/page"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -1,14 +1,21 @@
 var that;
-import WxValidate from '../../../utils/WxValidate';
+import Api from '../../config/api';
+import WxValidate from '../../utils/WxValidate';
 Page({
   data: {
     sexArray:['请选择性别','男','女'],
     formData:{
-      sex:0
+      gender:0
     }
   },
-  onLoad(options) {
-    that = this;
+  async onLoad(options) {
+    that = this;    
+    let res = await Api.carePersonalDetail({id:options.id});
+    console.log(res);
+
+    that.setData({
+      formData:res.data||{gender:0}
+    })
     that.initValidate();
   },
   initValidate() {
@@ -16,7 +23,7 @@ Page({
       name:{
         required:true
       },
-      sex: {
+      gender: {
         min: 1
       },
       height: {
@@ -41,7 +48,7 @@ Page({
       name:{
         required:"请输入客户姓名"
       },
-      sex: {
+      gender: {
         min: "请选择客户性别"
       },
       height: {
@@ -79,14 +86,21 @@ Page({
     })
 
   },
-  submit(e){
+  async submit(e){
     console.log(e)
-
     if (!that.WxValidate.checkForm(e.detail.value)) {
       console.log(that.WxValidate)
       let error = that.WxValidate.errorList[0]
       that.prompt(error.msg)
       return false;
     }
+    let res = await Api.addCarePersonal(e.detail.value);
+    if(res.code==0){
+      wx.reLaunch({
+        url: '/pages/apoplexy/customer/list?show=true',
+      });
+    }
+    
+
   }
 })

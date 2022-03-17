@@ -1,7 +1,7 @@
 
 var that;
-import WxValidate from '../../../utils/WxValidate';
-import Api from '../../../config/api';
+import WxValidate from '../../utils/WxValidate';
+import Api from '../../config/api';
 Page({
   data: {
     questionList:[],
@@ -14,12 +14,14 @@ Page({
 
     that = this;
     let res = await Api.scaleQuestions({fid:options.fid});
+    let res1 = await Api.questionEvaluationDetail({fid:options.fid,cid:options.cid});
     console.log(res);
     
     that.setData({
       questionList:res.data,
       fid:options.fid,
-      cid:options.cid
+      cid:options.cid,
+      result:res1.data||{}
     })
     that.showData(0);
   },
@@ -58,10 +60,22 @@ Page({
         const error = that.WxValidate.errorList[0];
         console.log(error);
         
-        that.prompt(error.msg);
-        that.setData({
-          toIndex:"item"+error.param
-        })
+        var query = wx.createSelectorQuery();
+        query.select("#item"+error.param).boundingClientRect();
+        query.selectViewport().scrollOffset();        
+        query.exec((res) => {
+          console.log(res);
+          //已经滚动的高度
+          let scrollTop = res[1].scrollTop;
+          //目标距离顶部的高度
+          let top = res[0].top;            
+          wx.pageScrollTo({
+            scrollTop:top + scrollTop - 28
+          });
+          
+          that.prompt(error.msg);
+        });
+
         return;
     }
     let pageNo = that.data.pageNo;
@@ -88,7 +102,7 @@ Page({
   },
   modalBtn(){
     wx.reLaunch({
-      url: '/pages/apoplexy/scale/index?cid='+that.data.cid,
+      url: '/pages/scale/index?cid='+that.data.cid,
     })
   },
   getQuestions(){

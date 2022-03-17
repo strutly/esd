@@ -1,0 +1,37 @@
+<view class="prompt" wx:if="{{prompt}}">{{promptMsg}}</view>
+<form bindsubmit="submit">
+  
+  <view class="form-box">
+    <view class="form-item">
+      <view class="form-lable">姓名</view>
+      <input class="form-value" placeholder="请输入客户的姓名" name="name" value="{{formData.name}}" type="text"/>
+    </view>
+    <view class="form-item">
+      <view class="form-lable">性别</view>
+      <input hidden name="gender" value="{{formData.sex}}" />
+      <picker mode="selector" range="{{sexArray}}" class="form-value" bindchange="pickerChange">{{sexArray[formData.gender]}}</picker>
+    </view>
+    <view class="form-item">
+      <view class="form-lable">身高</view>
+      <input class="form-value" placeholder="请输入客户的身高" name="height" value="{{formData.height}}" type="number" />
+      <view class="form-des">(cm)</view>
+    </view>
+    <view class="form-item">
+      <view class="form-lable">体重</view>
+      <input class="form-value" placeholder="请输入客户的体重" name="weight" value="{{formData.weight}}" type="digit" />
+      <view class="form-des">(kg)</view>
+    </view>
+    <view class="form-item">
+      <view class="form-lable">电话</view>
+      <input class="form-value" placeholder="请输入客户的电话" name="phone" value="{{formData.phone}}" type="number" />
+    </view>
+
+    <view class="form-item">
+      <view class="form-lable">家庭住址</view>
+      <input class="form-value" placeholder="请输入家庭住址" name="address" value="{{formData.address}}" type="text" />
+    </view>
+  </view>
+  <view class="btn-box">
+    <button class="btn" formType="submit">保存</button>
+  </view>
+</form>

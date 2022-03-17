@@ -3,7 +3,7 @@
   <input type="text" placeholder="客户姓名/手机号" placeholder-class="search-placeholder" bindinput="search"/>
 </view>
 
-<navigator url="/pages/apoplexy/scale/index?cid={{item.id}}" class="item" wx:for="{{customers}}"  wx:key="index">
+<navigator url="/pages/customer/form?id={{item.id}}" class="item" wx:for="{{customers}}"  wx:key="index">
   <view class="item-head">
     <view class="item-title">{{item.name}}</view>
     <view class="item-value">
@@ -16,6 +16,6 @@
   </view>  
 </navigator>
 
-<navigator url="/pages/apoplexy/customer/form" class="btn-box" wx:if="{{show}}">
+<navigator url="/pages/apoplexy/customer/form?id=0" class="btn-box">
   <button class="btn">添加客户</button>
 </navigator>

@@ -1,0 +1,17 @@
+<view class="search-box">
+  <view class="tc-icon tc-search"></view>
+  <input type="text" placeholder="客户姓名/手机号" placeholder-class="search-placeholder" bindinput="search"/>
+</view>
+
+<navigator url="{{types[type]}}?cid={{item.id}}" class="item" wx:for="{{customers}}"  wx:key="index">
+  <view class="item-head">
+    <view class="item-title">{{item.name}}</view>
+    <view class="item-value">
+      <view class="tc-icon tc-{{item.gender==1?'nan':'nv'}}"></view>
+    </view>
+  </view>
+  <view class="item-head">
+    <view class="item-title">{{item.phone}}</view>
+    <view class="item-value value-time">{{item.createTime}}</view>
+  </view>  
+</navigator>
