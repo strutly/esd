@@ -82,7 +82,7 @@ Page({
   },
   pickerChange(e) {
     that.setData({
-      ['formData.sex']: e.detail.value
+      ['formData.gender']: e.detail.value
     })
 
   },
@@ -94,10 +94,15 @@ Page({
       that.prompt(error.msg)
       return false;
     }
-    let res = await Api.addCarePersonal(e.detail.value);
+    let res = {};
+    if(e.detail.value.id){
+      res = await Api.updateCarePersonal(e.detail.value)
+    }else{
+      res = await Api.addCarePersonal(e.detail.value);
+    }
     if(res.code==0){
       wx.reLaunch({
-        url: '/pages/apoplexy/customer/list?show=true',
+        url: '/pages/customer/list',
       });
     }
     

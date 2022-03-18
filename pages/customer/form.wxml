@@ -1,6 +1,6 @@
 <view class="prompt" wx:if="{{prompt}}">{{promptMsg}}</view>
 <form bindsubmit="submit">
-  
+  <input hidden name="id" value="{{formData.id}}" wx:if="{{formData.id}}"/>
   <view class="form-box">
     <view class="form-item">
       <view class="form-lable">姓名</view>
@@ -8,7 +8,7 @@
     </view>
     <view class="form-item">
       <view class="form-lable">性别</view>
-      <input hidden name="gender" value="{{formData.sex}}" />
+      <input hidden name="gender" value="{{formData.gender}}" />
       <picker mode="selector" range="{{sexArray}}" class="form-value" bindchange="pickerChange">{{sexArray[formData.gender]}}</picker>
     </view>
     <view class="form-item">

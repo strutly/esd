@@ -1,81 +1,98 @@
 @import "/style/modal.wxss";
-page{
+
+page {
   background-color: #f1f1f1;
 }
-.personal-container{
+
+.personal-container {
   background-color: #41b592;
-  padding: 15rpx;  
+  padding: 15rpx;
   color: #fff;
   box-sizing: border-box;
 }
-.personal-box{
+
+.personal-box {
   display: flex;
   margin-top: 50rpx;
   align-items: center;
 }
 
-.personal-info{
+.personal-info {
   flex: 1;
   display: flex;
   align-items: center;
   color: #fff;
 }
-.personal-wallet{
+
+.personal-wallet {
   margin: 0 70rpx;
   text-align: center;
 }
-.personal-wallet .tc-icon{  
+
+.personal-wallet .tc-icon {
   font-size: 50rpx;
 }
 
-.wallet{
+.wallet {
   margin-top: 15rpx;
   font-size: 25rpx;
 }
 
-.personal-base{
+.personal-base {
   flex: 1;
 }
 
-.personal-head{
+.personal-head {
   width: 128rpx;
   height: 128rpx;
   margin: 0 30rpx;
   border-radius: 50%;
 }
 
-.personal-nickname{
+.personal-nickname {
   font-size: 34rpx;
   line-height: 50rpx;
   color: #fff;
+  background-color: #41b592;
+  text-align: left;
+  padding: 0;
 }
-.personal-tag{
+
+.personal-nickname::after {
+  border: none;
+}
+
+.personal-tag {
   width: fit-content;
   margin-top: 20rpx;
-  font-size: 26rpx;  
-  border-radius: 30rpx;  
+  font-size: 26rpx;
+  border-radius: 30rpx;
   padding: 7rpx 40rpx;
-  border:2rpx solid #fff;
+  border: 2rpx solid #fff;
 }
+
 /*服务区*/
-.personal-services{
+.personal-services {
   margin: 30rpx auto;
   display: flex;
 }
-.service{
+
+.service {
   flex: 1;
   text-align: center;
 }
-.service .tc-icon{
+
+.service .tc-icon {
   font-size: 80rpx;
 }
-.service-title{
+
+.service-title {
   margin-top: 15rpx;
   font-size: 25rpx;
 }
 
 /*培训班*/
-.sign-box{
+.sign-box {
   background-color: #fff;
   margin: 30rpx 20rpx;
   border-radius: 30rpx;
@@ -84,44 +101,54 @@ page{
   box-sizing: border-box;
   align-items: center;
 }
-.sign-box .tc-icon{
+
+.sign-box .tc-icon {
   font-size: 128rpx;
   margin-right: 30rpx;
 }
-.sign{
+
+.sign {
   margin-top: 30rpx;
 }
-.sign-box .sign:first-child{
+
+.sign-box .sign:first-child {
   margin-top: 0;
 }
-.sign-title{
+
+.sign-title {
   font-size: 34rpx;
 }
-.sign-des{
+
+.sign-des {
   font-size: 28rpx;
-  color:#aaa;
+  color: #aaa;
 }
-.grids{
+
+.grids {
   width: 100%;
   margin-top: 50rpx;
   overflow: hidden;
   box-sizing: border-box;
 }
-.grid{
+
+.grid {
   float: left;
   width: 25%;
   text-align: center;
 }
-.grid .tc-icon{
+
+.grid .tc-icon {
   font-size: 80rpx;
 }
-.grid-title{
+
+.grid-title {
   font-size: 25rpx;
   margin: 30rpx auto;
 }
-.footer{
+
+.footer {
   font-size: 25rpx;
-  color:#aaa;
+  color: #aaa;
   text-align: center;
   position: fixed;
   bottom: 60rpx;

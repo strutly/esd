@@ -1,12 +1,12 @@
 <view class="prompt" wx:if="{{prompt}}">{{promptMsg}}</view>
 <include src="/pages/template/modal.wxml"></include>
 <view class="personal-container">
-  <view class="personal-box">    
+  <view class="personal-box">
     <view class="personal-info">
-      <image class="personal-head" src="/images/headimg.png"></image>
+      <image class="personal-head" src="{{userInfo.avatarUrl}}"></image>
       <view class="personal-base">
-        <view class="personal-nickname">NickName</view>
-        <view class="personal-tag">支架术后照护</view>
+        <button bindtap="getUserProfile" class="personal-nickname">{{userInfo.nickName}}</button>
+        <view class="personal-tag">脑卒中照护</view>
       </view>
     </view>
     <view class="personal-wallet">
