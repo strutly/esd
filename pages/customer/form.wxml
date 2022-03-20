@@ -9,8 +9,16 @@
     <view class="form-item">
       <view class="form-lable">性别</view>
       <input hidden name="gender" value="{{formData.gender}}" />
-      <picker mode="selector" range="{{sexArray}}" class="form-value" bindchange="pickerChange">{{sexArray[formData.gender]}}</picker>
+      <picker mode="selector" data-type="gender" range="{{sexArray}}" class="form-value" bindchange="pickerChange">{{sexArray[formData.gender]}}</picker>
     </view>
+
+    <view class="form-item">
+      <view class="form-lable">出生日期</view>
+      <input hidden name="birthday" value="{{formData.birthday}}" />
+      <picker mode="date" data-type="birthday"  class="form-value" bindchange="pickerChange">{{formData.birthday?formData.birthday:"请选择出生日期"}}</picker>
+    </view>
+
+
     <view class="form-item">
       <view class="form-lable">身高</view>
       <input class="form-value" placeholder="请输入客户的身高" name="height" value="{{formData.height}}" type="number" />

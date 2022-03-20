@@ -1,20 +1,22 @@
 <view class="search-box">
   <view class="tc-icon tc-search"></view>
-  <input type="text" placeholder="客户姓名/手机号" placeholder-class="search-placeholder" bindinput="search"/>
+  <input type="text" placeholder="客户姓名/手机号" placeholder-class="search-placeholder" bindinput="search" />
+</view>
+<view class="safe-bottom">
+  <navigator url="/pages/customer/form?id={{item.id}}" class="item" wx:for="{{customers}}" wx:key="index">
+    <view class="item-head">
+      <view class="item-title">{{item.name}}</view>
+      <view class="item-value">
+        <view class="tc-icon tc-{{item.gender==1?'nan':'nv'}}"></view>
+      </view>
+    </view>
+    <view class="item-head">
+      <view class="item-title">{{item.phone}}</view>
+      <view class="item-value value-time">{{item.createTime}}</view>
+    </view>
+  </navigator>
 </view>
 
-<navigator url="/pages/customer/form?id={{item.id}}" class="item" wx:for="{{customers}}"  wx:key="index">
-  <view class="item-head">
-    <view class="item-title">{{item.name}}</view>
-    <view class="item-value">
-      <view class="tc-icon tc-{{item.gender==1?'nan':'nv'}}"></view>
-    </view>
-  </view>
-  <view class="item-head">
-    <view class="item-title">{{item.phone}}</view>
-    <view class="item-value value-time">{{item.createTime}}</view>
-  </view>  
-</navigator>
 
 <navigator url="/pages/apoplexy/customer/form?id=0" class="btn-box">
   <button class="btn">添加客户</button>

@@ -26,6 +26,10 @@ Page({
       gender: {
         min: 1
       },
+      birthday:{
+        required:true,
+        dateISO:true,
+      },
       height: {
         required: true,
         min: 50
@@ -50,6 +54,10 @@ Page({
       },
       gender: {
         min: "请选择客户性别"
+      },
+      birthday:{
+        required:"请选择客户的出生日期",
+        dateISO:"请选择客户的出生日期",
       },
       height: {
         required: "请输入客户身高",
@@ -81,10 +89,11 @@ Page({
     }, 1500);
   },
   pickerChange(e) {
+    console.log(e);
+    let type = e.currentTarget.dataset.type;
     that.setData({
-      ['formData.gender']: e.detail.value
+      ['formData.'+type]: e.detail.value
     })
-
   },
   async submit(e){
     console.log(e)
