@@ -1,36 +1,132 @@
-page{
+page {
   background-color: #fafafa;
   font-size: 34rpx;
 }
-.item{
+
+.item {
   margin: 30rpx;
-  padding:30rpx;
+  padding: 30rpx;
   border-radius: 15rpx;
-  background-color:#fff;  
+  background-color: #fff;
 }
 
-.item-head{
+.item-head {
   display: flex;
   margin-bottom: 30rpx;
 }
-.item-title{
-  flex:1;  
+
+.item-title {
+  flex: 1;
 }
-.item-value{
+
+.item-value {
   color: #41b592;
+  display: flex;
+  align-items: center;
 }
-.value-time{
+
+.item-tag {
+  background-color: #41b592;
+  padding: 5rpx 20rpx;
+  font-size: 24rpx;
+  color: #fff;
+  margin-right: 15rpx;
+  border-radius: 20rpx;
+}
+
+.value-time {
   color: #7f7f7f;
   font-size: 28rpx;
 }
-.abnormal{
-  color:#F85A6D;
+.item-serve{
+  border-top:2rpx solid #eee;
+  font-size: 30rpx;
+}
+
+.serve-head {
+  padding: 30rpx 0;
+  display: flex;
+  align-items: center;
+  font-size: 30rpx;
+  border-bottom: 2rpx solid #eee;
+}
+
+.serve-head-tips {
+  flex: 1;
+  font-size: 24rpx;
+}
+
+.serve-head-health {
+  padding-right: 40rpx;
+  position: relative;
+  
+}
+
+.serve-head-health::after {
+  position: absolute;
+  font: normal normal normal 14px/1 "weui";
+  content: "\EA08";
+  font-size: 24rpx;
+  font-weight: bolder;
+  color: #41b592;
+  top: 10rpx;
+  right: 10rpx;
+}
+
+.progress-item{
+  display: flex;
+  padding: 30rpx 0;
+  align-items: center;
+  border-bottom: 2rpx solid #eee;
+}
+.serve-progress .progress-item:last-child{
+  border-bottom: none;
+}
+.progress-item-title{
+  flex:3;
+}
+.progress-item-status{
+  flex:2;
+  text-align: center;
+  position: relative;
+  margin: 0 30rpx;
+  z-index:2;
+  color: #fff;
+  font-size: 20rpx;
+}
+
+.progress-item-status::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #41b592;
+  z-index: -1;
+  transform: skew(-45deg);
+}
+
+.progress-item-speed{
+  flex:5;
+  float: right;
+}
+.speed-lable{
+  text-align: right;
+  font-size: 24rpx;
+  color: #41b592;
+}
+
+.abnormal {
+  color: #F85A6D;
   margin-right: 15rpx;
 }
-.normal{
-  color:#866FFD;
+
+.normal {
+  color: #866FFD;
 }
-.search-box{
+
+.search-box {
   display: flex;
   height: 80rpx;
   border-radius: 40rpx;
@@ -39,20 +135,22 @@ page{
   background-color: #f2f2f2;
   margin: 30rpx;
 }
-.tc-search{
+
+.tc-search {
   width: 40rpx;
   height: 40rpx;
-  background-color:#f2f2f2;
+  background-color: #f2f2f2;
   text-align: center;
   line-height: 40rpx;
   margin: 0 20rpx;
 
 }
-.search-placeholder{
+
+.search-placeholder {
   color: #d7d7d7;
 }
 
 
-.search-box input{
+.search-box input {
   flex: 1;
 }

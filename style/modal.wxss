@@ -20,6 +20,7 @@
 }
 .modal-content{
   display: flex;
+  align-items: center;
   margin: 80rpx auto;
 }
 .modal-content-center{
@@ -51,4 +52,19 @@
 .modal-text{
   color: #41b592;
   text-decoration: underline;
+}
+.modal-btn-cancle{
+  color:#F59A23;
+  border-color: #F59A23;
+}
+.modal-title{
+  padding-top: 30rpx;
+  color: #666;
+}
+.modal-textarea{
+  margin-top: 30rpx;
+}
+.modal-textarea textarea{
+  border: 2rpx solid #f6f6f6;
+  box-sizing: border-box;
 }

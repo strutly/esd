@@ -1,4 +1,4 @@
-<view class="prompt" wx:if="{{prompt}}">{{promptMsg}}</view>
+<prompt id="prompt"></prompt>
 <view class="container">
   <view class="head">
     <view class="head-title">培训班名称:全国第一期健康照护师试点培训班</view>

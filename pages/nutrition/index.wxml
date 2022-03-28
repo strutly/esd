@@ -1,4 +1,4 @@
-<view class="prompt" wx:if="{{prompt}}">{{promptMsg}}</view>
+<prompt id="prompt"></prompt>
 <image src="/images/logo.png" class="logo"></image>
 
 <view class="des">本系统基于**医院营养科专家知识，应用清华大学人工智能技术，帮助健康照护师快速完成智能营养方案制订。</view>

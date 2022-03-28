@@ -1,4 +1,4 @@
-<view class="prompt" wx:if="{{prompt}}">{{promptMsg}}</view>
+<prompt id="prompt"></prompt>
 <include src="/pages/template/modal.wxml"></include>
 <view class="personal-container">
   <view class="personal-box">
@@ -15,10 +15,10 @@
     </view>
   </view>
   <view class="personal-services">
-    <view class="service">
+    <navigator url="/pages/serve/list" class="service">
       <view class="tc-icon tc-services"></view>
       <view class="service-title">我的服务</view>
-    </view>
+    </navigator>
     <navigator url="/pages/course/collection" class="service">
       <view class="tc-icon tc-classes"></view>
       <view class="service-title">在线课程</view>

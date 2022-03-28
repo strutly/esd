@@ -76,17 +76,8 @@ Page({
     }
     that.WxValidate = new WxValidate(rules, messages);
   },
-  prompt(msg) {
-    that.setData({
-      prompt: true,
-      promptMsg: msg
-    });
-    setTimeout(function () {
-      that.setData({
-        prompt: false,
-        promptMsg: ''
-      })
-    }, 1500);
+  onReady(){
+    that.prompt = that.selectComponent("#prompt");
   },
   pickerChange(e) {
     console.log(e);
@@ -100,7 +91,7 @@ Page({
     if (!that.WxValidate.checkForm(e.detail.value)) {
       console.log(that.WxValidate)
       let error = that.WxValidate.errorList[0]
-      that.prompt(error.msg)
+      that.prompt.showTips(error.msg)
       return false;
     }
     let res = {};

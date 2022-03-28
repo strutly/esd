@@ -1,5 +1,5 @@
 var that;
-const api = require('../../config/api');
+import Api from '../../config/api';
 Page({
 
   data: {
@@ -17,7 +17,7 @@ Page({
     that.getList("",1);
   },
   async getList(name,pageNo){
-    let res = await api.carePersonalPage({name:name,pageNo:pageNo});
+    let res = await Api.carePersonalPage({name:name,pageNo:pageNo});
     let customers = that.data.customers||[];    
     customers = customers.concat(res.data.content);
     that.setData({

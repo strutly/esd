@@ -334,17 +334,8 @@ Page({
     })
 
   },
-  prompt(msg) {
-    that.setData({
-      prompt: true,
-      promptMsg: msg
-    });
-    setTimeout(function () {
-      that.setData({
-        prompt: false,
-        promptMsg: ''
-      })
-    }, 1500);
+  onReady(){
+    that.prompt = that.selectComponent("#prompt");
   },
   next(){
     let index = that.data.index;
@@ -368,7 +359,7 @@ Page({
     let data = that.data.questions[length].formData;
     if (!that.WxValidate.checkForm(data)) {
       let error = that.WxValidate.errorList[0]
-      that.prompt(error.msg)
+      that.prompt.showTips(error.msg)
       return false;
     }
     that.setData({

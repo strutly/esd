@@ -1,4 +1,4 @@
-<view class="prompt" wx:if="{{prompt}}">{{promptMsg}}</view>
+<prompt id="prompt"></prompt>
 <image src="/images/logo.png" class="logo"></image>
 
 <view class="des">本系统基于基于**医院护理部专家知识,应用清华大学人工智能技术,帮助健康照护师快速完成智能大小便服务方案制定。</view>

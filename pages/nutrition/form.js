@@ -378,17 +378,8 @@ Page({
     })
 
   },
-  prompt(msg) {
-    that.setData({
-      prompt: true,
-      promptMsg: msg
-    });
-    setTimeout(function () {
-      that.setData({
-        prompt: false,
-        promptMsg: ''
-      })
-    }, 1500);
+  onReady(){
+    that.prompt = that.selectComponent("#prompt");
   },
   next(){
     let index = that.data.index;
@@ -417,7 +408,7 @@ Page({
             scrollTop:top + scrollTop - 28
           });
           let msg = res[0].dataset.title;
-          that.prompt("请选择["+msg+"]的答案!");
+          that.prompt.showTips("请选择["+msg+"]的答案!");
         });
         flag = false;
         break;
@@ -430,7 +421,7 @@ Page({
     let param = e.detail.value;
     if (!that.WxValidate.checkForm(param)) {
       const error = that.WxValidate.errorList[0];
-      return that.prompt(error.msg)
+      return that.prompt.showTips(error.msg)
     }
     that.setData({
       info:param

@@ -17,12 +17,13 @@ Page({
       end:res2.data?'已完成':''
     })
   },
+  onReady(){
+    that.prompt = that.selectComponent("#prompt");
+  },
   async chooseImg(e) {
-
     let res = await wx.chooseImage({
       count: 1
     })
-
     console.log(res);
     that.upload(res.tempFilePaths[0]);
   },
@@ -44,7 +45,34 @@ Page({
         })
       }
     })
-
   },
+  check(){
+    let scales = that.data.scales||[];
+    let flag = 0;
+    scales.forEach(scale=>{
+      if(!scale.status){
+        flag++;
+      }
+    })
+    if(flag==0){
+      that.submit();
+    }else if(flag<scales.length){
+      that.confirmModal();
+    }else{
+      that.prompt.showTips("请至少评估一项再生成照护计划!")
+    } 
+  },
+  confirmModal(){
+    that.setData({
+      confirmModal:!that.data.confirmModal
+    })
+  },
+  async submit(){
+    console.log(1);
+    let res = await Api.addServePlan({
+      cid:that.data.cid
+    })
+    console.log(res);
+  }
 
 })

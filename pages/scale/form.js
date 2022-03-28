@@ -25,6 +25,9 @@ Page({
     })
     that.showData(0);
   },
+  onReady(){
+    that.prompt = that.selectComponent("#prompt");
+  },
   initValidate(rules,messages) {
     that.WxValidate = new WxValidate(rules, messages);
   },
@@ -73,7 +76,7 @@ Page({
             scrollTop:top + scrollTop - 28
           });
           
-          that.prompt(error.msg);
+          that.prompt.showTips(error.msg);
         });
 
         return;
@@ -131,18 +134,6 @@ Page({
       }
     })
     return options;
-  },
-  prompt(promptMsg) {
-    that.setData({
-      prompt: true,
-      promptMsg: promptMsg
-    });
-    setTimeout(function () {
-      that.setData({
-        prompt: false,
-        promptMsg: ''
-      })
-    }, 1500);
   },
   showData(index){
     let questionbox = that.data.questionList;

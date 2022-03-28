@@ -1,0 +1,32 @@
+<prompt id="prompt"></prompt>
+<view class="safe-bottom">
+  <checkbox-group bindchange="checkboxChange">
+    <view class="items-box" wx:for="{{cares}}" wx:for-item="care" wx:key="index">
+      <view class="items-title">{{care.title}}</view>
+      <view class="items">
+
+        <label class="item" wx:for="{{care.items}}" wx:for-index="k" wx:key="k">
+          <view>{{item}}</view>
+          <checkbox class="checkbox" value="{{item}}" />
+        </label>
+      </view>
+    </view>
+  </checkbox-group>
+</view>
+<view class="btn-box">
+  <button class="btn" bindtap="check">完成照护</button>
+</view>
+
+<view class="mask" wx:if="{{handleModal}}" bindtap="handleModal"></view>
+<view class="modal" wx:if="{{handleModal}}">
+  <form bindsubmit="submit">
+    <input hidden name="planId" value="{{planId}}" />
+    <input hidden name="type" value="1" />
+    <view class="modal-title">已完成的项目</view>
+    <view class="modal-title">{{itemStr}}</view>
+    <view class="modal-textarea">
+      <textarea name="remark" placeholder="请输入服务中的问题、照护对象情况等" />
+    </view>
+    <button class="modal-btn" form-type="submit">完成</button>
+  </form>
+</view>

@@ -1,0 +1,18 @@
+.prompt{
+  width: 96%;
+  position: fixed;
+  top: 0;
+  background-color: #e75e58;
+  font-size: 1rem;
+  color: #fff;
+  z-index: 99999;
+  text-align: center;
+  border-radius: 0.2rem;
+  min-height: 1.4rem;
+  line-height: 1.4rem;
+  left: 2%;
+  overflow:hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  -o-text-overflow:ellipsis;
+}

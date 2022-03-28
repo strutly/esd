@@ -1,4 +1,4 @@
-<view class="prompt" wx:if="{{prompt}}">{{promptMsg}}</view>
+<prompt id="prompt"></prompt>
 <include src="/pages/template/modal.wxml"></include>
 <wxs src="/utils/Tools.wxs" module="Tools" />
 <progress class="q-speed" percent="{{((pageNo+1)/questionList.length)*100}}" activeColor="#41B592"></progress>
@@ -16,7 +16,7 @@
 </template>
 <!--多选题模板-->
 <template name="checkbox">
-  <checkbox-group name="{{question.groupSort}}{{question.sort}}" class="q-checkbox" bindchange="checkboxChange" data-id="{{question.id}}" data-groupSort="{{question.groupSort}}" data-groupName="{{question.groupName}}" data-title="{{question.title}}" data-sort="{{question.sort}}">
+  <checkbox-group name="{{question.groupSort}}{{question.sort}}" class="q-checkbox" bindchange="checkboxChange" data-id="{{question.id}}" data-groupSort="{{question.groupSort}}" data-showTitle="{{question.showTitle}}" data-groupName="{{question.groupName}}" data-title="{{question.title}}" data-sort="{{question.sort}}">
     <label class="q-option-item" wx:for="{{question.options}}" wx:for-item="option">
       <checkbox class="checkbox" value="{{option.value}}" checked="{{Tools.checked(result,question.id,option.value)}}" />
       <text>{{option.lable}}</text>

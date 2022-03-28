@@ -1,4 +1,4 @@
-<view class="prompt" wx:if="{{prompt}}">{{promptMsg}}</view>
+<prompt id="prompt"></prompt>
 <include src="/pages/template/modal.wxml"></include>
 <template name="question">
   <view class="container safe-bottom">

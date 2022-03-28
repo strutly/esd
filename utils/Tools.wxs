@@ -1,25 +1,25 @@
-var indexOf = function(arr,val){
-  if(!arr||!val) return false;
-  return arr.indexOf(val+"")>-1;
+var indexOf = function (arr, val) {
+  if (!arr || !val) return false;
+  return arr.indexOf(val + "") > -1;
 }
-var ifShow = function(ifneed,result,show){
-  if(!ifneed){
+var ifShow = function (ifneed, result, show) {
+  if (!ifneed) {
     return true;
   }
-  if(show){    
-    if(result[""+show[0]]!=null && result[""+show[0]].value == show[1]){
+  if (show) {
+    if (result["" + show[0]] != null && result["" + show[0]].value == show[1]) {
       return true;
     }
   }
   return false;
 };
-var checked = function(result,id,val){
+var checked = function (result, id, val) {
   var flag = false;
-  
-  if(result[""+id]!=null && result[""+id].options){
-    var vals = result[""+id].options;
-    vals.forEach(function(v){
-      if(v.value+''==val+''){
+
+  if (result["" + id] != null && result["" + id].options) {
+    var vals = result["" + id].options;
+    vals.forEach(function (v) {
+      if (v.value + '' == val + '') {
         flag = true;
         return false;
       }
@@ -27,16 +27,28 @@ var checked = function(result,id,val){
   }
   return flag;
 };
-var val = function(result,id){
-  if(result[""+id]!=null && result[""+id].options){
-    var vals = result[""+id].options;
+var val = function (result, id) {
+  if (result["" + id] != null && result["" + id].options) {
+    var vals = result["" + id].options;
     return vals[0].des;
   }
   return "";
 };
+var endDay = function (createTime) {
+  
+  var now = getDate().getTime();
+  var start = getDate(createTime.toString().replace(getRegExp("-","g"),"/"));  
+  var end = start.setDate(start.getDate() + 90);  
+  if (now >= end) {
+    return "已完结";
+  }  
+  var days = Math.ceil((end - now) / (24 * 60 * 60 * 1000));
+  return "剩余:"+days+"天";
+}
 module.exports = {
-  indexOf:indexOf,
-  ifShow:ifShow,
-  checked:checked,
-  val:val
+  indexOf: indexOf,
+  ifShow: ifShow,
+  checked: checked,
+  val: val,
+  endDay:endDay
 }

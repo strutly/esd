@@ -1,4 +1,4 @@
-<view class="prompt" wx:if="{{prompt}}">{{promptMsg}}</view>
+<prompt id="prompt"></prompt>
 <include src="/pages/template/video.wxml"></include>
 <image src="/images/logo.png" class="logo"></image>
 

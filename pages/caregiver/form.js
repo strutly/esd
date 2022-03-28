@@ -1,7 +1,7 @@
 
 var that;
 import WxValidate from '../../utils/WxValidate';
-const api = require('../../config/api');
+import Api from '../../config/api';
 Page({
   data: {
     sexArray:['请选择性别','男','女'],
@@ -24,6 +24,9 @@ Page({
       }
     })
     that.initValidate();
+  },
+  onReady(){
+    that.prompt = that.selectComponent("#prompt");
   },
   pickerChange(e){
     console.log(e);
@@ -102,12 +105,12 @@ Page({
     console.log(params)
     if (!that.WxValidate.checkForm(params)) {
       let error = this.WxValidate.errorList[0]
-      that.prompt(error.msg)
+      that.prompt.showTips(error.msg)
       return false
     }
     params.trainClass = {id:3};
     params.trainOrg = {id:1};
-    let res = await api.addStudent(JSON.stringify(params));
+    let res = await Api.addStudent(JSON.stringify(params));
     if(res.code==0){
       wx.showToast({
         title: '提交成功',
@@ -121,11 +124,11 @@ Page({
       sourceType:['album', 'camera']
     });
     console.log(res)
-    let data = await api.uploadFile(res.tempFilePaths[0]);
+    let data = await Api.uploadFile(res.tempFilePaths[0]);
     console.log(data)
     if(data.code==0){
       that.setData({
-        ['formData.photo']:api.domain+data.data.src
+        ['formData.photo']:Api.domain+data.data.src
       })
     }
   },
@@ -134,18 +137,6 @@ Page({
     that.setData({
       agree:val.includes("agree")
     })
-  },
-  prompt(msg) {
-    that.setData({
-      prompt: true,
-      promptMsg: msg
-    });
-    setTimeout(function () {
-      that.setData({
-        prompt: false,
-        promptMsg: ''
-      })
-    }, 1500);
   },
   mask(){
     that.setData({

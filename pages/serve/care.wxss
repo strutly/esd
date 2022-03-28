@@ -1,0 +1,22 @@
+@import "/style/modal.wxss";
+.items-box{
+  background-color: #fff;
+}
+.items-title{
+  padding: 30rpx;
+  background-color: #f1f1f1;
+}
+.items{
+  
+}
+.item{
+  padding: 30rpx;
+  border-bottom: 2rpx solid #eee;
+  display: flex;
+  align-items: center;
+}
+.item view{
+  flex:1;
+}
+
+

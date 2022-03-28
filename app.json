@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/home",
+    "pages/serve/care",
     "pages/scale/index",
     "pages/customer/form",
     "pages/scale/form",
@@ -26,7 +27,11 @@
     "pages/course/list",
     "pages/piss/serve",
     "pages/customer/list",
-    "pages/customer/page"
+    "pages/customer/page",
+    "pages/serve/list",
+    "components/prompt",
+    "pages/serve/stage",
+    "pages/serve/recure"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -1,0 +1,1 @@
+<view class="prompt" wx:if="{{prompt}}">{{promptMsg}}</view>

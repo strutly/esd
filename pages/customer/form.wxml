@@ -1,4 +1,4 @@
-<view class="prompt" wx:if="{{prompt}}">{{promptMsg}}</view>
+<prompt id="prompt"></prompt>
 <form bindsubmit="submit">
   <input hidden name="id" value="{{formData.id}}" wx:if="{{formData.id}}"/>
   <view class="form-box">

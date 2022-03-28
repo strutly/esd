@@ -1,0 +1,6 @@
+{
+  "usingComponents":{
+    "prompt": "/components/prompt",
+    "video":"/components/video"
+  }
+}

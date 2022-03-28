@@ -192,18 +192,7 @@ Page({
     })
 
   },
-  prompt(msg) {
-    that.setData({
-      prompt: true,
-      promptMsg: msg
-    });
-    setTimeout(function () {
-      that.setData({
-        prompt: false,
-        promptMsg: ''
-      })
-    }, 1500);
-  },
+  
   next(){
     let index = that.data.index;
     that.setData({

@@ -25,7 +25,7 @@ Page({
         })
         app.globalData.ifAuth = true;
       } else {
-        that.prompt(res.msg);
+        that.prompt.showTips(res.msg);
       }
     } else {
       that.setData({
@@ -68,23 +68,14 @@ Page({
           authModal: false
         });
       } else {
-        that.prompt(res.msg);
+        that.prompt.showTips(res.msg);
       }
     } else {
-      that.prompt("您已拒绝授权获取手机号~");
+      that.prompt.showTips("您已拒绝授权获取手机号~");
     }
   },
-  prompt(msg) {
-    that.setData({
-      prompt: true,
-      promptMsg: msg
-    });
-    setTimeout(function () {
-      that.setData({
-        prompt: false,
-        promptMsg: ''
-      })
-    }, 1500);
+  onReady(){
+    that.prompt = that.selectComponent("#prompt");
   },
   async getUserProfile(e) {
     console.log(e);

@@ -1,0 +1,84 @@
+<prompt id="prompt"></prompt>
+<wxs src="/utils/Tools.wxs" module="Tools" />
+
+<view class="search-box">
+  <view class="tc-icon tc-search"></view>
+  <input type="text" placeholder="客户姓名/手机号" placeholder-class="search-placeholder" bindinput="search" />
+</view>
+<view class="safe-bottom">
+  <view class="item" wx:for="{{plans}}" wx:key="index">
+    <view bindtap="open" data-index="{{index}}">
+      <view class="item-head">
+        <view class="item-title">{{item.carePersonal.name}}</view>
+        <view class="item-value">
+          <view class="item-tag">脑卒中院后</view>
+          <view class="tc-icon tc-{{item.carePersonal.gender==1?'nan':'nv'}}"></view>
+        </view>
+      </view>
+      <view class="item-head">
+        <view class="item-title">{{item.carePersonal.phone}}</view>
+        <view class="item-value value-time">{{item.status}}</view>
+      </view>
+    </view>
+    <view class="item-serve" wx:if="{{openIndex==index}}">
+      <view class="serve-head">
+        <view class="serve-head-tips">点击完成下列服务</view>
+        <view class="serve-head-health">健康评估</view>
+        <view class="serve-head-end">阶段评估({{item.countRespVo.sum5?'已完成':'未完成'}})</view>
+      </view>
+      <view class="serve-progress">
+        <view data-href="/pages/serve/care?planId={{item.id}}" bindtap="{{item.countRespVo.if1?'':'toHref'}}" class="progress-item">
+          <view class="progress-item-title">照护</view>
+          <view class="progress-item-status">{{item.countRespVo.if1?'今日已完成':''}}</view>
+          <view class="progress-item-speed">
+            <view class="speed-lable">{{item.countRespVo.sum1?item.countRespVo.sum1:0}}/30</view>
+            <progress stroke-width="20rpx" border-radius="20" percent="{{(item.countRespVo.sum1?item.countRespVo.sum1:0)/0.3}}" activeColor="#41B592"></progress>
+          </view>
+        </view> 
+        <view class="progress-item" data-id="{{item.id}}" data-type="2" bindtap="{{item.countRespVo.if2?'':'handleModal'}}">
+          <view class="progress-item-title">宣教</view>
+          <view class="progress-item-status">{{item.countRespVo.if2?'今日已完成':''}}</view>
+          <view class="progress-item-speed">
+            <view class="speed-lable">{{item.countRespVo.sum2?item.countRespVo.sum2:0}}/4</view>
+            <progress stroke-width="20rpx" border-radius="20" percent="{{(item.countRespVo.sum2?item.countRespVo.sum2:0)/0.04}}" activeColor="#41B592"></progress>
+          </view>
+        </view>
+        <view class="progress-item" data-id="{{item.id}}" data-type="3" bindtap="{{item.countRespVo.if3?'':'handleModal'}}">
+          <view class="progress-item-title">远程指导</view>
+          <view class="progress-item-status">{{item.countRespVo.if3?'今日已完成':''}}</view>
+          <view class="progress-item-speed">
+            <view class="speed-lable">{{item.countRespVo.sum3?item.countRespVo.sum3:0}}/4</view>
+            <progress stroke-width="20rpx" border-radius="20" percent="{{(item.countRespVo.sum3?item.countRespVo.sum3:0)/0.04}}" activeColor="#41B592"></progress>
+          </view>
+        </view>
+        <view data-href="/pages/serve/recure?planId={{item.id}}" bindtap="{{item.countRespVo.if4?'':'toHref'}}" class="progress-item">
+          <view class="progress-item-title">康复辅助</view>
+          <view class="progress-item-status">{{item.countRespVo.if4?'今日已完成':''}}</view>
+          <view class="progress-item-speed">
+            <view class="speed-lable">{{item.countRespVo.sum4?item.countRespVo.sum4:0}}/8</view>
+            <progress stroke-width="20rpx" border-radius="20" percent="{{(item.countRespVo.sum4?item.countRespVo.sum4:0)/0.08}}" activeColor="#41B592"></progress>
+          </view>
+        </view>
+      </view>
+
+    </view>
+
+  </view>
+</view>
+
+
+<view class="mask" wx:if="{{handleModal}}" bindtap="handleModal"></view>
+<view class="modal" wx:if="{{handleModal}}">
+  <form bindsubmit="submit">
+    <input hidden name="planId" value="{{planId}}" />
+    <input hidden name="type" value="{{type}}" />
+
+    <view class="modal-title">服务项:<lable>{{type==2?'宣教':'远程指导'}}</lable>
+    </view>
+    <view class="modal-textarea">
+      <textarea name="remark" placeholder="请输入服务中的问题、照护对象情况等" />
+    </view>
+
+    <button class="modal-btn" form-type="submit">完成</button>
+  </form>
+</view>

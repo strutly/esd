@@ -163,17 +163,8 @@ Page({
     }
     that.WxValidate = new WxValidate(rules, messages);
   },
-  prompt(msg) {
-    that.setData({
-      prompt: true,
-      promptMsg: msg
-    });
-    setTimeout(function () {
-      that.setData({
-        prompt: false,
-        promptMsg: ''
-      })
-    }, 1500);
+  onReady(){
+    that.prompt = that.selectComponent("#prompt");
   },
   checkType(e) {
     console.log(e);
@@ -239,7 +230,7 @@ Page({
     let result = questions[index].questions.filter(item=>item.checked);
     console.log(result);
     if(result.length==0){
-      return that.prompt("请至少选择一个选项~");
+      return that.prompt.showTips("请至少选择一个选项~");
     }
     let care = that.data.care;
     let cares = {};
@@ -295,7 +286,7 @@ Page({
     let data = e.detail.value;
     if (!that.WxValidate.checkForm(data)) {
       let error = that.WxValidate.errorList[0]
-      that.prompt(error.msg)
+      that.prompt.showTips(error.msg)
       return false;
     } 
     let order = {};
