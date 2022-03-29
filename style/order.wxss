@@ -45,6 +45,7 @@ page {
 .item-serve {
   border-top: 2rpx solid #eee;
   font-size: 30rpx;
+  color: #7F7F7F;
 }
 
 
@@ -110,7 +111,7 @@ page {
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: #41b592;
+  background-color: #02A7F0;
   z-index: -1;
   transform: skew(-45deg);
 }

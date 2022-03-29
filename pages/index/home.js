@@ -74,7 +74,7 @@ Page({
       that.prompt.showTips("您已拒绝授权获取手机号~");
     }
   },
-  onReady(){
+  onReady() {
     that.prompt = that.selectComponent("#prompt");
   },
   async getUserProfile(e) {
@@ -98,8 +98,7 @@ Page({
         that.setData({
           userInfo: auth.data
         })
-        console.log(that.data.info)
-      }      
+      }
     } catch (error) {
       console.log(error)
     }

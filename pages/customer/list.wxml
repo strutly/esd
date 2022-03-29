@@ -18,6 +18,6 @@
 </view>
 
 
-<navigator url="/pages/apoplexy/customer/form?id=0" class="btn-box">
+<navigator url="/pages/customer/form?id=0" class="btn-box">
   <button class="btn">添加客户</button>
 </navigator>

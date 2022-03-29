@@ -63,6 +63,7 @@
 }
 .modal-textarea{
   margin-top: 30rpx;
+  box-sizing: border-box;
 }
 .modal-textarea textarea{
   border: 2rpx solid #f6f6f6;

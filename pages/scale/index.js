@@ -77,8 +77,8 @@ Page({
     })
     console.log(res);
     if(res.code==0){
-      that.confirmModal();
       that.setData({
+        confirmModal:false,
         successModal:true,
         modalMsg:"照护计划已生成,请查看",
         modalBtn:"确认"
