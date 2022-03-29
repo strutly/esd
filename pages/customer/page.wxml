@@ -12,6 +12,15 @@
   </view>
   <view class="item-head">
     <view class="item-title">{{item.phone}}</view>
-    <view class="item-value value-time">{{item.createTime}}</view>
+    <view class="item-value value-time" wx:if="{{item.status}}">
+      
+        <view class="tc-icon tc-{{item.state?'reservation':'end'}}"></view>
+        <view>{{item.state?'服务中 ('+item.status+')':'服务已结束'}}</view>        
+      
+        
+    </view>
+    <view class="item-value value-time item-start" wx:else>
+        开始评估    
+      </view>  
   </view>  
 </navigator>

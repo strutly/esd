@@ -31,13 +31,16 @@
     "pages/serve/list",
     "components/prompt",
     "pages/serve/stage",
-    "pages/serve/recure"
+    "pages/serve/recure",
+    "pages/serve/assess"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "健康照护师",
     "navigationBarTextStyle": "black"
+    
   },
+  "lazyCodeLoading": "requiredComponents",
   "sitemapLocation": "sitemap.json"
 }

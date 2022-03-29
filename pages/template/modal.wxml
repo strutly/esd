@@ -33,7 +33,7 @@
 <view class="modal" wx:if="{{confirmModal}}">
   <view class="modal-content">
     <view class="modal-icon tc-icon tc-mark"></view>
-    <view class="modal-msg">尚有未评估的评估项,确认生成照护计划?</view>
+    <view class="modal-msg">{{confirmMsg}}</view>
   </view>
   <view class="modal-btns">
     <view class="modal-btn modal-btn-cancle" bindtap="confirmModal">取消</view>

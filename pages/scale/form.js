@@ -21,6 +21,7 @@ Page({
       questionList:res.data,
       fid:options.fid,
       cid:options.cid,
+      planId:options.planId,
       result:res1.data||{}
     })
     that.showData(0);
@@ -85,17 +86,20 @@ Page({
     if(pageNo==that.data.questionList.length-1){  
       let fid = that.data.fid;
       let cid = that.data.cid;
+      let planId = that.data.planId;
       Api.addQuestionEvaluation(JSON.stringify({
         fid:fid,
         cid:cid,
+        planId:planId,
         checkList:Object.values(that.data.result)
       })).then(res=>{
         console.log(res);
         if(res.code==0){
           that.setData({
             modal:true,
-            modalMsg:"提交成功",
-            modalBtn:"确定"
+            modalMsg:"提交成功,结果为:"+res.data.result,
+            modalBtn:"确定",
+            result:res.data.result
           })
         }
       })      
@@ -104,9 +108,25 @@ Page({
     }
   },
   modalBtn(){
-    wx.reLaunch({
-      url: '/pages/scale/index?cid='+that.data.cid,
-    })
+    let fid = that.data.fid;
+    let result = that.data.result;
+    let planId = that.data.planId;
+    let pages = getCurrentPages();
+    let prevPage = pages[pages.length - 2]; // 上一个页面
+    if(prevPage){
+      let scales = prevPage.data.scales; // 获取上一页data里的数据
+      scales.forEach(scale=>{
+        if(scale.id==fid){
+          scale.result = result;
+          scale.status = true;
+          scale.planId = planId;
+        }
+      });
+      prevPage.setData({
+        scales:scales
+      });
+    }
+    wx.navigateBack();
   },
   getQuestions(){
     let questionList = that.data.questionList;

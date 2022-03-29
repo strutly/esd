@@ -7,13 +7,13 @@
     <view class="scale-result"></view>
     <view class="scale-status">{{end}}</view>  
   </view>
-  <navigator url="/pages/scale/form?fid={{item.id}}&cid={{cid}}" class="scale" wx:for="{{scales}}" wx:key="index">
+  <navigator url="/pages/scale/form?fid={{item.id}}&cid={{cid}}&planId={{item.planId}}" class="scale" wx:for="{{scales}}" wx:key="index">
     <view class="tc-icon tc-{{item.icon}}"></view>
     <view class="scale-title">{{item.title}}</view>
     <view class="scale-result">{{item.result?item.result:''}}</view>
     <view class="scale-status">{{item.status?'已完成':''}}</view>  
   </navigator>
-  <view class="btn-box">    
+  <view class="btn-box" wx:if="{{!state}}">    
     <button class="btn" bindtap="check">生成照护计划</button>
   </view>
 </view>

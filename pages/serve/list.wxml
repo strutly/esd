@@ -24,9 +24,18 @@
       <view class="serve-head">
         <view class="serve-head-tips">点击完成下列服务</view>
         <view class="serve-head-health">健康评估</view>
-        <view class="serve-head-end">阶段评估({{item.countRespVo.sum5?'已完成':'未完成'}})</view>
+        <view data-href="/pages/serve/assess?planId={{item.id}}&cid={{item.carePersonal.id}}" class="serve-head-end" bindtap="{{item.countRespVo.sum5?'':'toHref'}}">阶段评估({{item.countRespVo.sum5?'已完成':'未完成'}})</view>
       </view>
       <view class="serve-progress">
+        <view class="progress-item" wx:if="{{item.countRespVo.sum1>=30}}">
+          <view class="progress-item-title">照护</view>
+          <view class="progress-item-status">全部完成</view>
+          <view class="progress-item-speed">
+            <view class="speed-lable">4/4</view>
+            <progress stroke-width="20rpx" border-radius="20" percent="100" activeColor="#41B592"></progress>
+          </view>
+        </view>
+
         <view data-href="/pages/serve/care?planId={{item.id}}" bindtap="{{item.countRespVo.if1?'':'toHref'}}" class="progress-item">
           <view class="progress-item-title">照护</view>
           <view class="progress-item-status">{{item.countRespVo.if1?'今日已完成':''}}</view>
@@ -35,7 +44,17 @@
             <progress stroke-width="20rpx" border-radius="20" percent="{{(item.countRespVo.sum1?item.countRespVo.sum1:0)/0.3}}" activeColor="#41B592"></progress>
           </view>
         </view> 
-        <view class="progress-item" data-id="{{item.id}}" data-type="2" bindtap="{{item.countRespVo.if2?'':'handleModal'}}">
+
+        <view class="progress-item" wx:if="{{item.countRespVo.sum2>=4}}">
+          <view class="progress-item-title">宣教</view>
+          <view class="progress-item-status">全部完成</view>
+          <view class="progress-item-speed">
+            <view class="speed-lable">4/4</view>
+            <progress stroke-width="20rpx" border-radius="20" percent="100" activeColor="#41B592"></progress>
+          </view>
+        </view>
+
+        <view class="progress-item" data-id="{{item.id}}" data-type="2" bindtap="{{item.countRespVo.if2?'':'handleModal'}}" wx:else>
           <view class="progress-item-title">宣教</view>
           <view class="progress-item-status">{{item.countRespVo.if2?'今日已完成':''}}</view>
           <view class="progress-item-speed">
@@ -43,7 +62,17 @@
             <progress stroke-width="20rpx" border-radius="20" percent="{{(item.countRespVo.sum2?item.countRespVo.sum2:0)/0.04}}" activeColor="#41B592"></progress>
           </view>
         </view>
-        <view class="progress-item" data-id="{{item.id}}" data-type="3" bindtap="{{item.countRespVo.if3?'':'handleModal'}}">
+
+        <view class="progress-item" wx:if="{{item.countRespVo.sum3>=4}}">
+          <view class="progress-item-title">远程指导</view>
+          <view class="progress-item-status">全部完成</view>
+          <view class="progress-item-speed">
+            <view class="speed-lable">4/4</view>
+            <progress stroke-width="20rpx" border-radius="20" percent="100" activeColor="#41B592"></progress>
+          </view>
+        </view>
+
+        <view class="progress-item" data-id="{{item.id}}" data-type="3" bindtap="{{item.countRespVo.if3?'':'handleModal'}}" wx:else>
           <view class="progress-item-title">远程指导</view>
           <view class="progress-item-status">{{item.countRespVo.if3?'今日已完成':''}}</view>
           <view class="progress-item-speed">
@@ -51,6 +80,16 @@
             <progress stroke-width="20rpx" border-radius="20" percent="{{(item.countRespVo.sum3?item.countRespVo.sum3:0)/0.04}}" activeColor="#41B592"></progress>
           </view>
         </view>
+
+        <view class="progress-item" wx:if="{{item.countRespVo.sum4>=8}}">
+          <view class="progress-item-title">康复辅助</view>
+          <view class="progress-item-status">全部完成</view>
+          <view class="progress-item-speed">
+            <view class="speed-lable">8/8</view>
+            <progress stroke-width="20rpx" border-radius="20" percent="100" activeColor="#41B592"></progress>
+          </view>
+        </view>
+        
         <view data-href="/pages/serve/recure?planId={{item.id}}" bindtap="{{item.countRespVo.if4?'':'toHref'}}" class="progress-item">
           <view class="progress-item-title">康复辅助</view>
           <view class="progress-item-status">{{item.countRespVo.if4?'今日已完成':''}}</view>

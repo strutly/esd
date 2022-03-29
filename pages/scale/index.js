@@ -3,7 +3,8 @@ import Api from "../../config/api";
 Page({
   data: {
     scales: [],
-    end:''
+    end:'',
+    state:true
   },
   async onLoad(options) {
     that = this;
@@ -13,7 +14,8 @@ Page({
     console.log(res);
     that.setData({
       cid: options.cid,
-      scales: res.data,
+      scales: res.data.formList,
+      state:res.data.serveState,
       end:res2.data?'已完成':''
     })
   },
@@ -64,7 +66,8 @@ Page({
   },
   confirmModal(){
     that.setData({
-      confirmModal:!that.data.confirmModal
+      confirmModal:!that.data.confirmModal,
+      confirmMsg:"尚有未评估的评估项,确认生成照护计划?"
     })
   },
   async submit(){
@@ -73,6 +76,24 @@ Page({
       cid:that.data.cid
     })
     console.log(res);
+    if(res.code==0){
+      that.confirmModal();
+      that.setData({
+        successModal:true,
+        modalMsg:"照护计划已生成,请查看",
+        modalBtn:"确认"
+      })
+    }
+  },
+  modalBtn(){
+    wx.reLaunch({
+      url: '/pages/serve/list',
+    })
+  },
+  order(){
+    wx.reLaunch({
+      url: '/pages/serve/list',
+    })
   }
 
 })

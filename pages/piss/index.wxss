@@ -59,11 +59,11 @@
 .btns .tc-order{
   background-color: #DADF00;
 }
-.btn{  
+.icon-btn{  
   flex:1;  
   margin: 0 auto;
   text-align: center;
 }
-.btn .tc-text{
+.icon-btn .tc-text{
   margin-top: 30rpx;
 }

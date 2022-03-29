@@ -1,0 +1,13 @@
+<include src="/pages/template/modal.wxml"></include>
+<prompt id="prompt"></prompt>
+<view class="scales safe-bottom">
+  <navigator url="/pages/scale/form?fid={{item.id}}&cid={{cid}}&planId={{planId}}" class="scale" wx:for="{{scales}}" wx:key="index">
+    <view class="tc-icon tc-{{item.icon}}"></view>
+    <view class="scale-title">{{item.title}}</view>
+    <view class="scale-result">{{item.result?item.result:''}}</view>
+    <view class="scale-status {{item.planId==planId?'':'scale-status-no'}}">{{item.planId==planId?'已确认':'待确认'}}</view>  
+  </navigator>
+  <view class="btn-box">    
+    <button class="btn" bindtap="check">完成评估</button>
+  </view>
+</view>

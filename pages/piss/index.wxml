@@ -4,11 +4,11 @@
 <view class="des">本系统基于基于**医院护理部专家知识,应用清华大学人工智能技术,帮助健康照护师快速完成智能大小便服务方案制定。</view>
 
 <view class="btns">
-  <navigator url="/pages/piss/form2" class="btn">
+  <navigator url="/pages/piss/form2" class="icon-btn">
     <view class="tc-icon tc-asserts"></view>
     <view class="tc-text">开始评估</view>
   </navigator>
-  <navigator url="/pages/piss/order" class="btn">
+  <navigator url="/pages/piss/order" class="icon-btn">
     <view class="tc-icon tc-order"></view>
     <view class="tc-text">我的订单</view>
   </navigator>

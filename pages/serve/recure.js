@@ -23,9 +23,15 @@ Page({
       items: e.detail.value
     })
   },
+  handleModal(){
+    that.setData({
+      handleModal: !that.data.handleModal
+    })
+  },
   check() {
     let items = that.data.items;
-    if (items.length == 0) {
+    let plan = that.data.plan;
+    if (plan.videos &&items.length == 0) {
       that.prompt.showTips("请至少勾选一项已完成项目再提交");
       return;
     }

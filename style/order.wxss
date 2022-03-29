@@ -38,10 +38,15 @@ page {
   color: #7f7f7f;
   font-size: 28rpx;
 }
-.item-serve{
-  border-top:2rpx solid #eee;
+.item-value .tc-icon{
+  margin-right: 10rpx;
+}
+
+.item-serve {
+  border-top: 2rpx solid #eee;
   font-size: 30rpx;
 }
+
 
 .serve-head {
   padding: 30rpx 0;
@@ -59,7 +64,7 @@ page {
 .serve-head-health {
   padding-right: 40rpx;
   position: relative;
-  
+
 }
 
 .serve-head-health::after {
@@ -73,24 +78,27 @@ page {
   right: 10rpx;
 }
 
-.progress-item{
+.progress-item {
   display: flex;
   padding: 30rpx 0;
   align-items: center;
   border-bottom: 2rpx solid #eee;
 }
-.serve-progress .progress-item:last-child{
+
+.serve-progress .progress-item:last-child {
   border-bottom: none;
 }
-.progress-item-title{
-  flex:3;
+
+.progress-item-title {
+  flex: 3;
 }
-.progress-item-status{
-  flex:2;
+
+.progress-item-status {
+  flex: 2;
   text-align: center;
   position: relative;
   margin: 0 30rpx;
-  z-index:2;
+  z-index: 2;
   color: #fff;
   font-size: 20rpx;
 }
@@ -107,11 +115,12 @@ page {
   transform: skew(-45deg);
 }
 
-.progress-item-speed{
-  flex:5;
+.progress-item-speed {
+  flex: 5;
   float: right;
 }
-.speed-lable{
+
+.speed-lable {
   text-align: right;
   font-size: 24rpx;
   color: #41b592;
@@ -153,4 +162,9 @@ page {
 
 .search-box input {
   flex: 1;
+}
+
+.item-start {
+  color: #41b592;
+  font-weight: bold;
 }
