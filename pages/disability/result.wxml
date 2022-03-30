@@ -1,4 +1,4 @@
-<include src="/pages/template/video.wxml"></include>
+<video id="video"></video>
 <view class="main-box">
   <view class="item-box padding0" wx:for="{{result}}" wx:key="index"
     wx:for-index="key" wx:for-item="result">

@@ -1,5 +1,5 @@
 <prompt id="prompt"></prompt>
-<include src="/pages/template/video.wxml"></include>
+<video id="video"></video>
 <image src="/images/logo.png" class="logo"></image>
 
 <view class="des">

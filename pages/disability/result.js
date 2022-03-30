@@ -151,64 +151,12 @@ Page({
       showVideos:showVideos
     });
   },
+  onReady(){
+    that.video = that.selectComponent("#video");
+  },
   playVideo(e){
     console.log(e);
-     //执行全屏方法  
-     videoContext = wx.createVideoContext('myvideo', that);
-     videoContext.requestFullScreen();
-     that.setData({
-       playVideo:true,
-       direction:90,
-       url:e.currentTarget.dataset.url
-     })
-  },
-  play(e) {
-    //执行全屏方法  
-    var videoContext = wx.createVideoContext('myvideo', this);
-    videoContext.requestFullScreen();
-    that.setData({
-      playVideo:true,
-      direction:90,
-      url:e.currentTarget.dataset.url
-    })
- },
- /**关闭视屏 */
- closeVideo() {
-   //执行退出全屏方法
-   var videoContext = wx.createVideoContext('myvideo', this);
-   videoContext.exitFullScreen();     
- },
- /**视屏进入、退出全屏 */
- fullScreen(e){
-   var isFull = e.detail.fullScreen;
-   //视屏全屏时显示加载video，非全屏时，不显示加载video
-   this.setData({
-    direction:90,
-   })
- },
-  
-
-
-  hiddenVideo(){
-    that.setData({
-      playVideo:false
-    })    
-  },
-  screenChange(e){
-    console.log(e);
-    let fullScreen = e.detail.fullScreen;
-    if(fullScreen){
-      direction = 90;
-      videoContext.requestFullScreen();
-      that.setData({
-        direction:90
-      })
-    }else{
-      that.setData({
-        playVideo:false
-      }) 
-    }
-    
+    that.video.playVideo(e.currentTarget.dataset.url);
   },
   detail(){
     wx.navigateTo({
