@@ -2,9 +2,9 @@
   font-family: "tc-icon"; /* Project id 3118992 */
   /* Color fonts */
   src: 
-       url('//at.alicdn.com/t/font_3118992_18g47ur5sp5.woff2?t=1647773359868') format('woff2'),
-       url('//at.alicdn.com/t/font_3118992_18g47ur5sp5.woff?t=1647773359868') format('woff'),
-       url('//at.alicdn.com/t/font_3118992_18g47ur5sp5.ttf?t=1647773359868') format('truetype');
+       url('//at.alicdn.com/t/font_3118992_4lv96wxjskf.woff2?t=1648606206703') format('woff2'),
+       url('//at.alicdn.com/t/font_3118992_4lv96wxjskf.woff?t=1648606206703') format('woff'),
+       url('//at.alicdn.com/t/font_3118992_4lv96wxjskf.ttf?t=1648606206703') format('truetype');
 }
 
 .tc-icon {

@@ -140,6 +140,9 @@ page {
 .grid .tc-icon {
   font-size: 80rpx;
 }
+.grid .cva-icon {
+  font-size: 80rpx;
+}
 
 .grid-title {
   font-size: 25rpx;

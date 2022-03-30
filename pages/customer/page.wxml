@@ -7,7 +7,7 @@
   <view class="item-head">
     <view class="item-title">{{item.name}}</view>
     <view class="item-value">
-      <view class="tc-icon tc-{{item.gender==1?'nan':'nv'}}"></view>
+      <view class="cva-icon cva-{{item.gender==1?'nan':'nv'}}"></view>
     </view>
   </view>
   <view class="item-head">

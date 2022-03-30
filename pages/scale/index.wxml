@@ -2,13 +2,13 @@
 <prompt id="prompt"></prompt>
 <view class="scales safe-bottom">
   <view class="scale" bindtap="chooseImg">
-    <view class="tc-icon tc-saomiao"></view>
+    <view class="cva-icon cva-saomiao"></view>
     <view class="scale-title">病历扫描</view>
     <view class="scale-result"></view>
     <view class="scale-status">{{end}}</view>  
   </view>
   <navigator url="/pages/scale/form?fid={{item.id}}&cid={{cid}}&planId={{item.planId}}" class="scale" wx:for="{{scales}}" wx:key="index">
-    <view class="tc-icon tc-{{item.icon}}"></view>
+    <view class="cva-icon cva-{{item.icon}}"></view>
     <view class="scale-title">{{item.title}}</view>
     <view class="scale-result">{{item.result?item.result:''}}</view>
     <view class="scale-status">{{item.status?'已完成':''}}</view>  

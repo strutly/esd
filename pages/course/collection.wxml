@@ -1,4 +1,4 @@
-<include src="/pages/template/video.wxml"></include>
+<video id="video"></video>
 <view class="list">
   <view class="media-box" bindtap="playVideo" data-url="https://1308944528.vod2.myqcloud.com/00b98b8evodcq1308944528/ad74fe15387702295819600670/QTukJSg1H7cA.mp4">
     <image src="https://6870-hpmp-0gc3hyp495d12e28-1301665033.tcb.qcloud.la/huiyi.png" class="media-box-thumb"/>

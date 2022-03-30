@@ -12,7 +12,7 @@
         <view class="item-title">{{item.carePersonal.name}}</view>
         <view class="item-value">
           <view class="item-tag">脑卒中院后</view>
-          <view class="tc-icon tc-{{item.carePersonal.gender==1?'nan':'nv'}}"></view>
+          <view class="cva-icon cva-{{item.carePersonal.gender==1?'nan':'nv'}}"></view>
         </view>
       </view>
       <view class="item-head">
