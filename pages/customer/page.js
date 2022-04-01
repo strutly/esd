@@ -16,12 +16,12 @@ Page({
     })
     that.getList("",1);
   },
-  async getList(name,pageNo){
-    let res = await Api.carePersonalPage({name:name,pageNo:pageNo});
+  async getList(name,pageNum){
+    let res = await Api.carePersonalPage({name:name,pageNum:pageNum});
     let customers = that.data.customers||[];    
     customers = customers.concat(res.data.content);
     that.setData({
-      pageNo:pageNo,
+      pageNum:pageNum,
       name:name,
       endline: res.data.last,
       customers:customers      
@@ -43,9 +43,9 @@ Page({
   onReachBottom(){
     let endline = that.data.endline;
     if(!endline){
-      let pageNo = that.data.pageNo + 1;
+      let pageNum = that.data.pageNum + 1;
       let name = that.data.name;
-      that.getList(name,pageNo);
+      that.getList(name,pageNum);
     }    
   }
 })
